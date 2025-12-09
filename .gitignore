@@ -25,8 +25,13 @@
 !mods/MazeRunner/
 !mods/MazeRunner/**
 
-# Project Godot Scene Files
+# Godot Addons
 !GodotProject/
+!GodotProject/addons/
+!GodotProject/addons/floorgen/
+!GodotProject/addons/floorgen/**
+
+# Project Godot Scene Files
 !GodotProject/levels/
 !GodotProject/levels/Test/
 !GodotProject/levels/Test/**
