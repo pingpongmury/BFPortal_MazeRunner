@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "gen-strings": "node ./scripts/generateStringKeys.js",
+    "watch-strings": "node ./scripts/watchStringKeys.js"
+  }
+}

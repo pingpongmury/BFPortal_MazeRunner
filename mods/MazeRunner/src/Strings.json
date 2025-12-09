@@ -1,0 +1,9 @@
+{
+    "GAME_loop_started": "Main Loop Started",
+    "MAZE_updatePhase": "Updating Maze Walls",
+    "MAZE_openPhase": "Opened Doors for Phase ",
+    "MAZE_closePhase": "Closed Doors for Phase ",
+    "ERR_PARSE_FAIL": "Error: Failed parsing object ID: ",
+    "ERR_NULL_OBJ": "Error: Failed to Retrieve Object ID: ",
+    "MAZE_init": "Initialized Maze Phases"
+}

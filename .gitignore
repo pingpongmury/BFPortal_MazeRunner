@@ -10,6 +10,7 @@
 # Whitelist Project Files
 
 # SDK Libraries (.ts, .d.ts)
+!code/
 !code/mod/
 !code/mod/**
 !code/modlib/
@@ -17,16 +18,20 @@
 
 # Exported Project Scene Files (.tscn)
 !export/
-!export**
+!export/**
 
 # Project Script Files (.ts, .json)
+!mods/
 !mods/MazeRunner/
 !mods/MazeRunner/**
 
 # Project Godot Scene Files
+!GodotProject/
+!GodotProject/levels/
 !GodotProject/levels/Test/
 !GodotProject/levels/Test/**
 
 # Project GD Scripts
+!GodotProject/scripts
 !GodotProject/scripts/MazeRunner/
 !GodotProject/scripts/MazeRunner/**
