@@ -1,0 +1,32 @@
+# Ignore everything by default
+*
+
+# Whitelist Git files
+!.gitignore
+!.gitattributes
+!README.md
+
+
+# Whitelist Project Files
+
+# SDK Libraries (.ts, .d.ts)
+!code/mod/
+!code/mod/**
+!code/modlib/
+!code/modlib/**
+
+# Exported Project Scene Files (.tscn)
+!export/
+!export**
+
+# Project Script Files (.ts, .json)
+!mods/MazeRunner/
+!mods/MazeRunner/**
+
+# Project Godot Scene Files
+!GodotProject/levels/Test/
+!GodotProject/levels/Test/**
+
+# Project GD Scripts
+!GodotProject/scripts/MazeRunner/
+!GodotProject/scripts/MazeRunner/**
