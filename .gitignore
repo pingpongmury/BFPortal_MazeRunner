@@ -31,6 +31,16 @@
 !GodotProject/addons/floorgen/
 !GodotProject/addons/floorgen/**
 
+# Project Scene Library
+!GodotProject/addons/
+!GodotProject/addons/scene-library/
+!GodotProject/addons/scene-library/scene_library.json
+
+# Project Object Files
+!GodotProject/objects/
+!GodotProject/objects/MazeRunner/
+!GodotProject/objects/MazeRunner/**
+
 # Project Godot Scene Files
 !GodotProject/levels/
 !GodotProject/levels/Test/
