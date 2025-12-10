@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvb128dsrwwwu"]
+[gd_scene load_steps=5 format=3 uid="uid://cvb128dsrwwwu"]
 
 [ext_resource type="Script" uid="uid://qcetg8ieq7pa" path="res://scripts/MazeRunner/MazeWall_get_movable.gd" id="1_p85r4"]
 [ext_resource type="Script" uid="uid://cbi63a1oe0kw6" path="res://scripts/MazeRunner/MazeWall_update_movable.gd" id="2_jsofg"]
 [ext_resource type="PackedScene" uid="uid://7jspwxisvdau" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="3_xyaho"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjjmv"]
+albedo_color = Color(0.552941, 1, 1, 1)
 
 [node name="Slide_U_Half" type="Node3D"]
 script = ExtResource("1_p85r4")
@@ -25,3 +28,12 @@ direction = 0
 [node name="Mov_Mid_Slider_Full_Door_Bot_" parent="Dynamic" instance=ExtResource("3_xyaho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
 ObjId = 100010
+
+[node name="Mesh" parent="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fjjmv")
+
+[node name="CollisionShape3D" parent="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[editable path="Dynamic/Mov_Mid_Slider_Full_Door_Bot_"]
+[editable path="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
