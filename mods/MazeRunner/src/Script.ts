@@ -1,5 +1,5 @@
 //Global Tick Rate
-const GLOBAL_TICK_RATE: number = 0.034; //in seconds (~30 ticks per second)
+const GLOBAL_TICK_RATE: number = 10//0.034; //in seconds (~30 ticks per second)
 
 //MAZE WALLS
 //const MAZE_WALL_DIMENSIONS = {width: 5.106211, height: 3.115628, depth: 1.586211}; //FoundationPlanter_Long_01 Defaults
@@ -13,20 +13,20 @@ const MAZE_WALL_PHASE_MOVE_SPEEDS : number[] = [0.5,1,5,10]; //Phase A, B, C, D
 const MAZE_WALL_PHASE_PERIOD : number[] = [5,3,10,30]; //Phase A, B, C, D
 
 //Phase Walls ObjIds
-const MAZE_PHASE_A_WALL_IDS : number[] = [1002011];
-const MAZE_PHASE_B_WALL_IDS : number[] = [];
-const MAZE_PHASE_C_WALL_IDS : number[] = [];
-const MAZE_PHASE_D_WALL_IDS : number[] = [];
+const MAZE_PHASE_A_WALL_IDS : number[] = [1002011,1002012,1003011,1003012];
+const MAZE_PHASE_B_WALL_IDS : number[] = [2010011,2010012,2010021,2010022];
+const MAZE_PHASE_C_WALL_IDS : number[] = [3100011,3101011];
+const MAZE_PHASE_D_WALL_IDS : number[] = [4112011,4112021];
 
 //Phase Array
 const MAZE_PHASE_IDS: number[][] = [MAZE_PHASE_A_WALL_IDS, MAZE_PHASE_B_WALL_IDS, MAZE_PHASE_C_WALL_IDS, MAZE_PHASE_D_WALL_IDS];
 
 //SPAWNERS
 //Counts for each type of spawner
-const AI_SPAWNER_COUNT: number          = 1; //Number of AI Spawners
+const AI_SPAWNER_COUNT: number          = 4; //Number of AI Spawners
 const LOOT_SPAWNER_COUNT: number        = 0; //Number of Loot Spawners
-const VEHICLE_SPAWNER_COUNT: number     = 0; //Number of Vehicle Spawners
-const EMPLACEMENT_SPAWNER_COUNT: number = 0; //Number of Emplacement Spawners
+const VEHICLE_SPAWNER_COUNT: number     = 1; //Number of Vehicle Spawners
+const EMPLACEMENT_SPAWNER_COUNT: number = 1; //Number of Emplacement Spawners
 
 //Spawner ID offsets
 const AI_SPAWNER_OFFSET: number          = 10; //AI Spawner IDs start at 11
@@ -127,7 +127,9 @@ class MazeWall{
     }
 
     calculateMovementVectors(initPos: mod.Vector, initRot: mod.Vector){
-        mod.SendErrorReport(mod.Message(mod.RoundToInteger(mod.YComponentOf(initRot) /  PI/2)));
+        mod.SendErrorReport(mod.Message(mod.YComponentOf(initRot)));
+        mod.SendErrorReport(mod.Message(mod.YComponentOf(initRot) / (PI/2)));
+        mod.SendErrorReport(mod.Message(mod.RoundToInteger(mod.YComponentOf(initRot) /  (PI/2))));
         if(this.moveType === "Linear"){
             switch(this.direction){
                 case "Up":
@@ -148,17 +150,17 @@ class MazeWall{
                     break;
                 case "Left":
                     //move left
-                    if(false){
+                    if(mod.RoundToInteger(mod.YComponentOf(initRot) /  (PI/2)) == 0 || mod.RoundToInteger(mod.YComponentOf(initRot) /  (PI/2)) == 2){ //Object is aligned along X axis
                         this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos) - MAZE_WALL_DIMENSIONS.width, mod.YComponentOf(initPos), mod.ZComponentOf(initPos)), initRot);
-                    }else{
+                    }else{  //Object is aligned along Z axis                                                                                          //Object is aligned along Z axis
                         this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos), mod.YComponentOf(initPos), mod.ZComponentOf(initPos) - MAZE_WALL_DIMENSIONS.width), initRot);
                     }
                     break;
                 case "Right":
                     //move right
-                    if(false){
+                    if(mod.RoundToInteger(mod.YComponentOf(initRot) /  (PI/2)) == 0 || mod.RoundToInteger(mod.YComponentOf(initRot) /  (PI/2)) == 2){ //Object is aligned along X axis
                         this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos) + MAZE_WALL_DIMENSIONS.width, mod.YComponentOf(initPos), mod.ZComponentOf(initPos)), initRot);
-                    }else{
+                    }else{  //Object is aligned along Z axis                                                                                          //Object is aligned along Z axis
                         this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos), mod.YComponentOf(initPos), mod.ZComponentOf(initPos) + MAZE_WALL_DIMENSIONS.width), initRot);
                     }
                     break;
@@ -239,6 +241,13 @@ function spawnAI(): void{
     }
 }
 
+function respawnRandAI(): void{
+    const spawnerId: number = mod.RoundToInteger(mod.RandomReal(AI_SPAWNER_OFFSET + 1, AI_SPAWNER_OFFSET + AI_SPAWNER_COUNT));
+    mod.AISetUnspawnOnDead(mod.GetSpawner(spawnerId), true); //Despawn AI on death
+    mod.SpawnAIFromAISpawner(mod.GetSpawner(spawnerId), mod.SoldierClass.Assault, ENEMY_TEAM);
+    enemyTeamSize += 1;
+}
+
 function initializeMazePhases(): MazePhase[]{
     const mazePhases: MazePhase[] = [];
     for(let i = 0; i < MAZE_PHASE_IDS.length; i++){
@@ -255,7 +264,7 @@ function initializeMazePhases(): MazePhase[]{
 export async function OnGameModeStarted(){
     const mazePhases: MazePhase[] = initializeMazePhases();
     mod.SendErrorReport(mod.Message(mod.stringkeys.MAZE_init, mazePhases.length));
-    //spawnAI();
+    spawnAI();
     tickUpdate();
     mazeUpdate(mazePhases);
 
@@ -267,9 +276,8 @@ async function tickUpdate(){
     mod.SendErrorReport(mod.Message(mod.stringkeys.GAME_loop_started));
     while(true){
         await mod.Wait(GLOBAL_TICK_RATE);
-        if(mod.CountOf(mod.AllPlayers()) < 3){
-            //spawnAI();
-            //enemyTeamSize += 1;
+        if(mod.CountOf(mod.AllPlayers()) < AI_SPAWNER_COUNT + 1){ //Garbage test code to respawn AI when one dies. TESTING ONLY
+            respawnRandAI();
         }
         
     }

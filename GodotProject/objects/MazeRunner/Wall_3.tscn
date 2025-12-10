@@ -10,15 +10,16 @@ script = ExtResource("1_h2q4e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
 
 [node name="FoundationPlanter_Long_02" parent="." instance=ExtResource("2_ktwym")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
 
 [node name="FoundationPlanter_Long_03" parent="." instance=ExtResource("2_ktwym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
 
 [node name="FoundationPlanter_Long_04" parent="." instance=ExtResource("2_ktwym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
 
 [node name="FoundationPlanter_Long_05" parent="." instance=ExtResource("2_ktwym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
 
 [node name="FoundationPlanter_Long_06" parent="." instance=ExtResource("2_ktwym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)

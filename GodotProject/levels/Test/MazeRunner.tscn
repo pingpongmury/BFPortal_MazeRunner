@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://6icsgd2mitm4"]
+[gd_scene load_steps=33 format=3 uid="uid://6icsgd2mitm4"]
 
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/HQ_PlayerSpawner.tscn" id="1_7wlmn"]
 [ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_5i13d"]
@@ -8,8 +8,12 @@
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="5_ecjhw"]
 [ext_resource type="PackedScene" path="res://static/MP_Eastwood_Terrain.tscn" id="6_fjqxu"]
 [ext_resource type="Script" uid="uid://bxtjwmxq03x2n" path="res://scripts/MazeRunner/gen_all_phase_ids.gd" id="7_4jtn2"]
+[ext_resource type="Script" uid="uid://d3v6jwiiqqv1w" path="res://scripts/MazeRunner/static_makeLocal.gd" id="7_mk8iu"]
 [ext_resource type="PackedScene" path="res://static/MP_Eastwood_Assets.tscn" id="7_whd0n"]
+[ext_resource type="Script" uid="uid://bb5vhtn2d4bo7" path="res://scripts/Shared/Generic/Common/Props/FoundationPlanter_Long_01.gd" id="8_gvlbj"]
+[ext_resource type="Script" uid="uid://qcetg8ieq7pa" path="res://scripts/MazeRunner/MazeWall_get_movable.gd" id="10_2077n"]
 [ext_resource type="Script" uid="uid://cehw8sobhwcgi" path="res://scripts/MazeRunner/Phase_get_movable_MazeWalls.gd" id="11_4jtn2"]
+[ext_resource type="Script" uid="uid://cbi63a1oe0kw6" path="res://scripts/MazeRunner/MazeWall_update_movable.gd" id="11_8pssg"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/AI/AI_Spawner.tscn" id="14_spdj6"]
 [ext_resource type="Script" uid="uid://div6e8h7lglky" path="res://scripts/MazeRunner/enum_all_spawners.gd" id="15_cusug"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/VehicleSpawner.tscn" id="15_l5yay"]
@@ -18,8 +22,34 @@
 [ext_resource type="Script" uid="uid://ckj254oqkalj2" path="res://scripts/MazeRunner/enum_loot.gd" id="18_7un2b"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/LootSpawner.tscn" id="19_mk8iu"]
 [ext_resource type="Script" uid="uid://dhks0tirky6pp" path="res://scripts/MazeRunner/enum_emplacement.gd" id="20_lm5j7"]
-[ext_resource type="PackedScene" uid="uid://cgm2uwvltkqe2" path="res://objects/MazeRunner/Wall_3.tscn" id="20_sda81"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/StationaryEmplacementSpawner.tscn" id="23_gvlbj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68hya"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie8pl"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pclqb"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt3u6"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bahkp"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxh28"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjjmv"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gfh7"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygom2"]
+albedo_color = Color(0.552941, 1, 1, 1)
 
 [node name="MP_Eastwood" type="Node3D"]
 
@@ -5454,21 +5484,402 @@ script = ExtResource("7_4jtn2")
 
 [node name="Phase_Static" type="Node3D" parent="MazeGame/MazeWalls"]
 
+[node name="Wall_x2_" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25311, 3.12457, -20.7068)
+script = ExtResource("7_mk8iu")
+
+[node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="FoundationPlanter_Long_02" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+script = ExtResource("8_gvlbj")
+
+[node name="FoundationPlanter_Long_03" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="FoundationPlanter_Long_04" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+script = ExtResource("8_gvlbj")
+
+[node name="Wall_x1_" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95465, 3.12457, -1.86859)
+script = ExtResource("7_mk8iu")
+
+[node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="FoundationPlanter_Long_02" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+script = ExtResource("8_gvlbj")
+
+[node name="Wall_x1_2" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3547, 3.12457, -1.86395)
+script = ExtResource("7_mk8iu")
+
+[node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="FoundationPlanter_Long_02" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_2"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+script = ExtResource("8_gvlbj")
+
+[node name="Wall_x1_3" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.1146, 3.12457, -3.62408)
+script = ExtResource("7_mk8iu")
+
+[node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="FoundationPlanter_Long_02" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_3"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+script = ExtResource("8_gvlbj")
+
+[node name="Wall_x1_4" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.1192, 3.12457, -18.947)
+script = ExtResource("7_mk8iu")
+
+[node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="FoundationPlanter_Long_02" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_4"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+script = ExtResource("8_gvlbj")
+
+[node name="Wall_x1_5" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.9841, 3.12833, -11.9869)
+script = ExtResource("7_mk8iu")
+ObjId = 12
+
+[node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="FoundationPlanter_Long_02" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_5"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+script = ExtResource("8_gvlbj")
+
 [node name="Phase_A" type="Node3D" parent="MazeGame/MazeWalls"]
 script = ExtResource("11_4jtn2")
 ObjId = 1000000
+_wall_ids = [1002011, 1002012, 1003011, 1003012]
+
+[node name="Slide_L_Full" type="Node3D" parent="MazeGame/MazeWalls/Phase_A"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.71466, 0.0150757, -13.8409)
+script = ExtResource("10_2077n")
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full"]
+script = ExtResource("11_8pssg")
+ObjId = 1
+height = 0
+
+[node name="Mov_Mid_Slider_Full_Arch_L1_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.106, 0, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="Mov_Mid_Slider_Full_Arch_L2_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Static"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.106, 2.38046, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full"]
+script = ExtResource("11_8pssg")
+ObjId = 1002010
+movable = true
+height = 0
+movement_type = 0
+direction = 2
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 1002011
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_68hya")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 1002012
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ie8pl")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Slide_R_Full" type="Node3D" parent="MazeGame/MazeWalls/Phase_A"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.71466, 0.0150757, -8.73474)
+script = ExtResource("10_2077n")
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full"]
+script = ExtResource("11_8pssg")
+ObjId = 1
+height = 0
+
+[node name="Mov_Mid_Slider_Full_Arch_R1_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.106, 0, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="Mov_Mid_Slider_Full_Arch_R2_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Static"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.106, 2.38046, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full"]
+script = ExtResource("11_8pssg")
+ObjId = 1003010
+movable = true
+height = 0
+movement_type = 0
+direction = 3
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 1003011
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pclqb")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 1003012
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wt3u6")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
 
 [node name="Phase_B" type="Node3D" parent="MazeGame/MazeWalls"]
 script = ExtResource("11_4jtn2")
 ObjId = 2000000
+_wall_ids = [2010011, 2010012, 2010021, 2010022]
+
+[node name="Rotate_CW_Full" type="Node3D" parent="MazeGame/MazeWalls/Phase_B"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14691, 0.0126953, -1.86871)
+script = ExtResource("10_2077n")
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full"]
+script = ExtResource("11_8pssg")
+height = 0
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full"]
+script = ExtResource("11_8pssg")
+ObjId = 2010010
+movable = true
+height = 0
+movement_type = 1
+direction = 0
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 2010011
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bahkp")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 2010012
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yxh28")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Rotate_CW_Full2" type="Node3D" parent="MazeGame/MazeWalls/Phase_B"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25311, 0.0126953, -1.86871)
+script = ExtResource("10_2077n")
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2"]
+script = ExtResource("11_8pssg")
+height = 0
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2"]
+script = ExtResource("11_8pssg")
+ObjId = 2010020
+movable = true
+height = 0
+movement_type = 1
+direction = 0
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 2010021
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bahkp")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 2010022
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yxh28")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
 
 [node name="Phase_C" type="Node3D" parent="MazeGame/MazeWalls"]
 script = ExtResource("11_4jtn2")
 ObjId = 3000000
+_wall_ids = [3100011, 3101011]
+
+[node name="Slide_U_Half" type="Node3D" parent="MazeGame/MazeWalls/Phase_C"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95465, 0.0126953, -20.707)
+script = ExtResource("10_2077n")
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half"]
+script = ExtResource("11_8pssg")
+height = 0
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half/Static"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half"]
+script = ExtResource("11_8pssg")
+ObjId = 3100010
+movable = true
+height = 1
+movement_type = 0
+direction = 0
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 3100011
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fjjmv")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Slide_D_Half" type="Node3D" parent="MazeGame/MazeWalls/Phase_C"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3593, 0.0126953, -20.707)
+script = ExtResource("10_2077n")
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half"]
+script = ExtResource("11_8pssg")
+height = 0
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half/Static"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+script = ExtResource("8_gvlbj")
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half"]
+script = ExtResource("11_8pssg")
+ObjId = 3101010
+movable = true
+height = 1
+movement_type = 0
+direction = 1
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 3101011
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2gfh7")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
 
 [node name="Phase_D" type="Node3D" parent="MazeGame/MazeWalls"]
 script = ExtResource("11_4jtn2")
 ObjId = 4000000
+_wall_ids = [4112011, 4112021]
+
+[node name="Rotate_U_Half" type="Node3D" parent="MazeGame/MazeWalls/Phase_D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.1147, 0.0126953, -8.73029)
+script = ExtResource("10_2077n")
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half"]
+script = ExtResource("11_8pssg")
+height = 0
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half/Static"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 111011
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half"]
+script = ExtResource("11_8pssg")
+ObjId = 4112010
+movable = true
+height = 1
+movement_type = 1
+direction = 2
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 4112011
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ygom2")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Rotate_U_Half2" type="Node3D" parent="MazeGame/MazeWalls/Phase_D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.1193, 0.0126953, -13.8454)
+script = ExtResource("10_2077n")
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2"]
+script = ExtResource("11_8pssg")
+height = 0
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2/Static"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 111011
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2"]
+script = ExtResource("11_8pssg")
+ObjId = 4112020
+movable = true
+height = 1
+movement_type = 1
+direction = 2
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2/Dynamic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+script = ExtResource("8_gvlbj")
+ObjId = 4112021
+
+[node name="Mesh" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ygom2")
+
+[node name="CollisionShape3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="MazeGame"]
 transform = Transform3D(-0.999031, -0.0163998, 0.0408328, 0.00360479, 0.894332, 0.447389, -0.0438552, 0.447103, -0.893407, -42.1126, 148.279, -593.552)
@@ -5477,7 +5888,7 @@ fov = 37.2
 [node name="DeployCam" parent="MazeGame/Camera3D" instance=ExtResource("5_ecjhw")]
 
 [node name="TEAM_1_HQ" parent="MazeGame" node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_7wlmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2755, -1.85931, -301.213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.4128, -1.85931, -300.91)
 AltTeam = 0
 VehicleSpawnersEnabled = true
 ForceRedeploy = true
@@ -5502,7 +5913,7 @@ transform = Transform3D(-0.0428871, 0, 0.99908, 0, 1, 0, -0.99908, 0, -0.0428871
 transform = Transform3D(0.0841819, 0, -0.99645, 0, 1, 0, 0.99645, 0, 0.0841819, 0, 0, 3)
 
 [node name="TEAM_2_HQ" parent="MazeGame" node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_7wlmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2367, -1.85956, -315.864)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.3801, -1.85956, -366.335)
 Team = 2
 AltTeam = 0
 ObjId = 2
@@ -5533,8 +5944,20 @@ script = ExtResource("15_spdj6")
 ObjId = 10
 
 [node name="AI_Spawner" parent="MazeGame/Spawners/AI" instance=ExtResource("14_spdj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.6272, -1.88348, -316.452)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.2708, -1.88348, -313.618)
 ObjId = 11
+
+[node name="AI_Spawner2" parent="MazeGame/Spawners/AI" instance=ExtResource("14_spdj6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -75.0829, -1.88348, -301.82)
+ObjId = 12
+
+[node name="AI_Spawner3" parent="MazeGame/Spawners/AI" instance=ExtResource("14_spdj6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -50.0356, -1.88348, -271.757)
+ObjId = 13
+
+[node name="AI_Spawner4" parent="MazeGame/Spawners/AI" instance=ExtResource("14_spdj6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -36.2302, -1.88348, -301.26)
+ObjId = 14
 
 [node name="Loot" type="Node3D" parent="MazeGame/Spawners"]
 script = ExtResource("18_7un2b")
@@ -5551,6 +5974,7 @@ ObjId = 200
 [node name="VehicleSpawner" parent="MazeGame/Spawners/Vehicle" instance=ExtResource("15_l5yay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.9236, -1.40732, -317.526)
 ObjId = 201
+P_AutoSpawnEnabled = true
 
 [node name="Emplacement" type="Node3D" parent="MazeGame/Spawners"]
 script = ExtResource("20_lm5j7")
@@ -5559,9 +5983,20 @@ ObjId = 300
 [node name="StationaryEmplacementSpawner" parent="MazeGame/Spawners/Emplacement" instance=ExtResource("23_gvlbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.8064, -1.40732, -316.714)
 ObjId = 301
+StationaryEmplacementType = 2
+P_AutoSpawnEnabled = true
 
-[node name="Wall_x3" parent="." instance=ExtResource("20_sda81")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 571.86, 286.51, 554.066)
+[node name="ConstructionNode" type="Node3D" parent="."]
 
-[node name="Wall_x4" parent="." instance=ExtResource("20_sda81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 571.86, 286.51, 556.294)
+[editable path="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_C/Slide_U_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_C/Slide_D_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_D/Rotate_U_Half/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[editable path="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2/Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
