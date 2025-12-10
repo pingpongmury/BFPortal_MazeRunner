@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd7s3hisy3v2m"]
+
+[ext_resource type="Script" uid="uid://qcetg8ieq7pa" path="res://scripts/MazeRunner/MazeWall_get_movable.gd" id="1_r13rr"]
+[ext_resource type="Script" uid="uid://cbi63a1oe0kw6" path="res://scripts/MazeRunner/MazeWall_update_movable.gd" id="2_omros"]
+[ext_resource type="PackedScene" uid="uid://7jspwxisvdau" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="3_ckjwl"]
+
+[node name="Slide_D_Half" type="Node3D"]
+script = ExtResource("1_r13rr")
+
+[node name="Static" type="Node3D" parent="."]
+script = ExtResource("2_omros")
+height = 0
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" parent="Static" instance=ExtResource("3_ckjwl")]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+
+[node name="Dynamic" type="Node3D" parent="."]
+script = ExtResource("2_omros")
+ObjId = 101009
+movable = true
+height = 1
+movement_type = 0
+direction = 1
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" parent="Dynamic" instance=ExtResource("3_ckjwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+ObjId = 101010

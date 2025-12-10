@@ -45058,7 +45058,307 @@
             "id": "MazeGame/StaticElements/FloorGrid/@Node3D@40320"
         },
         {
-            "name": "Mov_Mid_Slider_Full_Arch_R1_",
+            "name": "FoundationPlanter_Long_01",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 571.89557,
+                "y": 282.83216,
+                "z": 571.89552
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_/FoundationPlanter_Long_01"
+        },
+        {
+            "name": "FoundationPlanter_Long_02",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 571.89557,
+                "y": 285.94779,
+                "z": 571.89552
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_/FoundationPlanter_Long_02"
+        },
+        {
+            "name": "FoundationPlanter_Long_03",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 566.78937,
+                "y": 282.83216,
+                "z": 571.89552
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_/FoundationPlanter_Long_03"
+        },
+        {
+            "name": "FoundationPlanter_Long_04",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 566.78937,
+                "y": 285.94779,
+                "z": 571.89552
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_/FoundationPlanter_Long_04"
+        },
+        {
+            "name": "FoundationPlanter_Long_05",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 561.68317,
+                "y": 282.83216,
+                "z": 571.89552
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_/FoundationPlanter_Long_05"
+        },
+        {
+            "name": "FoundationPlanter_Long_06",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 561.68317,
+                "y": 285.94779,
+                "z": 571.89552
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_/FoundationPlanter_Long_06"
+        },
+        {
+            "name": "FoundationPlanter_Long_01",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 571.89557,
+                "y": 282.83216,
+                "z": 553.057
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_3/FoundationPlanter_Long_01"
+        },
+        {
+            "name": "FoundationPlanter_Long_02",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 571.89557,
+                "y": 285.94779,
+                "z": 553.057
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_3/FoundationPlanter_Long_02"
+        },
+        {
+            "name": "FoundationPlanter_Long_03",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 566.78937,
+                "y": 282.83216,
+                "z": 553.057
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_3/FoundationPlanter_Long_03"
+        },
+        {
+            "name": "FoundationPlanter_Long_04",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 566.78937,
+                "y": 285.94779,
+                "z": 553.057
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_3/FoundationPlanter_Long_04"
+        },
+        {
+            "name": "FoundationPlanter_Long_05",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 561.68317,
+                "y": 282.83216,
+                "z": 553.057
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_3/FoundationPlanter_Long_05"
+        },
+        {
+            "name": "FoundationPlanter_Long_06",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 561.68317,
+                "y": 285.94779,
+                "z": 553.057
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x3_3/FoundationPlanter_Long_06"
+        },
+        {
+            "name": "FoundationPlanter_Long_01",
             "type": "FoundationPlanter_Long_01",
             "right": {
                 "x": -4.37114e-08,
@@ -45076,14 +45376,14 @@
                 "z": -4.37114e-08
             },
             "position": {
-                "x": 573.4016002231904,
-                "y": 319.0915,
-                "z": 568.462
+                "x": 573.65558,
+                "y": 282.83216,
+                "z": 554.8169
             },
-            "id": "MazeGame/MazeWalls/Prototypes/Moving/Middle Full/Static/Mov_Mid_Slider_Full_Arch_R1_"
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x4_/FoundationPlanter_Long_01"
         },
         {
-            "name": "Mov_Mid_Slider_Full_Arch_R2_",
+            "name": "FoundationPlanter_Long_02",
             "type": "FoundationPlanter_Long_01",
             "right": {
                 "x": -4.37114e-08,
@@ -45091,21 +45391,171 @@
                 "z": -1
             },
             "up": {
-                "x": -8.74228e-08,
-                "y": -1,
-                "z": 3.82137297992e-15
+                "x": 0,
+                "y": 1,
+                "z": 0
             },
             "front": {
-                "x": -1,
-                "y": 8.74228e-08,
-                "z": 4.37114e-08
+                "x": 1,
+                "y": 0,
+                "z": -4.37114e-08
             },
             "position": {
-                "x": 573.4016002231904,
-                "y": 321.47196,
-                "z": 568.462
+                "x": 573.65558,
+                "y": 285.94779,
+                "z": 554.8169
             },
-            "id": "MazeGame/MazeWalls/Prototypes/Moving/Middle Full/Static/Mov_Mid_Slider_Full_Arch_R2_"
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x4_/FoundationPlanter_Long_02"
+        },
+        {
+            "name": "FoundationPlanter_Long_03",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": -1
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 1,
+                "y": 0,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 573.6555802231992,
+                "y": 282.83216,
+                "z": 559.9231
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x4_/FoundationPlanter_Long_03"
+        },
+        {
+            "name": "FoundationPlanter_Long_04",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": -1
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 1,
+                "y": 0,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 573.6555802231992,
+                "y": 285.94779,
+                "z": 559.9231
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x4_/FoundationPlanter_Long_04"
+        },
+        {
+            "name": "FoundationPlanter_Long_05",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": -1
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 1,
+                "y": 0,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 573.6555804463983,
+                "y": 282.83216,
+                "z": 565.0293
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x4_/FoundationPlanter_Long_05"
+        },
+        {
+            "name": "FoundationPlanter_Long_06",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": -1
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 1,
+                "y": 0,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 573.6555804463983,
+                "y": 285.94779,
+                "z": 565.0293
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x4_/FoundationPlanter_Long_06"
+        },
+        {
+            "name": "FoundationPlanter_Long_07",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": -1
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 1,
+                "y": 0,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 573.6555806695975,
+                "y": 282.83216,
+                "z": 570.1355
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x4_/FoundationPlanter_Long_07"
+        },
+        {
+            "name": "FoundationPlanter_Long_08",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": -1
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 1,
+                "y": 0,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 573.6555806695975,
+                "y": 285.94779,
+                "z": 570.1355
+            },
+            "id": "MazeGame/MazeWalls/Phase_Static/Wall_x4_/FoundationPlanter_Long_08"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_L1_",
@@ -45126,11 +45576,11 @@
                 "z": -4.37114e-08
             },
             "position": {
-                "x": 573.4015997768096,
-                "y": 319.0915,
-                "z": 558.25
+                "x": 559.9254797768095,
+                "y": 282.840615,
+                "z": 554.8192
             },
-            "id": "MazeGame/MazeWalls/Prototypes/Moving/Middle Full/Static/Mov_Mid_Slider_Full_Arch_L1_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full/Static/Mov_Mid_Slider_Full_Arch_L1_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_L2_",
@@ -45151,16 +45601,16 @@
                 "z": 4.37114e-08
             },
             "position": {
-                "x": 573.4015997768096,
-                "y": 321.47196,
-                "z": 558.25
+                "x": 559.9254797768095,
+                "y": 285.221075,
+                "z": 554.8192
             },
-            "id": "MazeGame/MazeWalls/Prototypes/Moving/Middle Full/Static/Mov_Mid_Slider_Full_Arch_L2_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full/Static/Mov_Mid_Slider_Full_Arch_L2_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Door_Top_",
-            "ObjId": 10010,
             "type": "FoundationPlanter_Long_01",
+            "ObjId": 1002011,
             "right": {
                 "x": -4.37114e-08,
                 "y": 0,
@@ -45177,16 +45627,16 @@
                 "z": 4.37114e-08
             },
             "position": {
-                "x": 573.4016,
-                "y": 321.47434,
-                "z": 563.356
+                "x": 559.92548,
+                "y": 285.223455,
+                "z": 559.9252
             },
-            "id": "MazeGame/MazeWalls/Prototypes/Moving/Middle Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Door_Bot_",
-            "ObjId": 10011,
             "type": "FoundationPlanter_Long_01",
+            "ObjId": 1002012,
             "right": {
                 "x": -4.37114e-08,
                 "y": 0,
@@ -45203,11 +45653,113 @@
                 "z": -4.37114e-08
             },
             "position": {
-                "x": 573.4016,
-                "y": 319.08911963,
-                "z": 563.356
+                "x": 559.92548,
+                "y": 282.83823463,
+                "z": 559.9252
             },
-            "id": "MazeGame/MazeWalls/Prototypes/Moving/Middle Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
+        },
+        {
+            "name": "Mov_Mid_Slider_Full_Arch_L1_",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": 1
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -1,
+                "y": 0,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 559.9254797768095,
+                "y": 282.840615,
+                "z": 570.13317
+            },
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full2/Static/Mov_Mid_Slider_Full_Arch_L1_"
+        },
+        {
+            "name": "Mov_Mid_Slider_Full_Arch_L2_",
+            "type": "FoundationPlanter_Long_01",
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": 1
+            },
+            "up": {
+                "x": 8.74228e-08,
+                "y": -1,
+                "z": 3.82137297992e-15
+            },
+            "front": {
+                "x": 1,
+                "y": 8.74228e-08,
+                "z": 4.37114e-08
+            },
+            "position": {
+                "x": 559.9254797768095,
+                "y": 285.221075,
+                "z": 570.13317
+            },
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full2/Static/Mov_Mid_Slider_Full_Arch_L2_"
+        },
+        {
+            "name": "Mov_Mid_Slider_Full_Door_Top_",
+            "type": "FoundationPlanter_Long_01",
+            "ObjId": 1002021,
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": 1
+            },
+            "up": {
+                "x": 1.50996e-07,
+                "y": -1,
+                "z": 6.6002465544e-15
+            },
+            "front": {
+                "x": 1,
+                "y": 1.50996e-07,
+                "z": 4.37114e-08
+            },
+            "position": {
+                "x": 559.92548,
+                "y": 285.223455,
+                "z": 565.02717
+            },
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Top_"
+        },
+        {
+            "name": "Mov_Mid_Slider_Full_Door_Bot_",
+            "type": "FoundationPlanter_Long_01",
+            "ObjId": 1002022,
+            "right": {
+                "x": -4.37114e-08,
+                "y": 0,
+                "z": 1
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -1,
+                "y": 0,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 559.92548,
+                "y": 282.83823463,
+                "z": 565.02717
+            },
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_R1_",
@@ -45228,11 +45780,11 @@
                 "z": -4.37114e-08
             },
             "position": {
-                "x": 573.4016002231904,
-                "y": 283.348,
-                "z": 568.462
+                "x": 536.1520002231904,
+                "y": 283.3946614,
+                "z": 548.4067
             },
-            "id": "MazeGame/MazeWalls/Phase_A/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_R1_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_R_Full/Static/Mov_Mid_Slider_Full_Arch_R1_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_R2_",
@@ -45253,65 +45805,16 @@
                 "z": 4.37114e-08
             },
             "position": {
-                "x": 573.4016002231904,
-                "y": 285.72846,
-                "z": 568.462
+                "x": 536.1520002231904,
+                "y": 285.7751214,
+                "z": 548.4067
             },
-            "id": "MazeGame/MazeWalls/Phase_A/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_R2_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Arch_L1_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 1,
-                "y": 0,
-                "z": -4.37114e-08
-            },
-            "position": {
-                "x": 573.4015997768096,
-                "y": 283.348,
-                "z": 558.25
-            },
-            "id": "MazeGame/MazeWalls/Phase_A/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_L1_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Arch_L2_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": -8.74228e-08,
-                "y": -1,
-                "z": 3.82137297992e-15
-            },
-            "front": {
-                "x": -1,
-                "y": 8.74228e-08,
-                "z": 4.37114e-08
-            },
-            "position": {
-                "x": 573.4015997768096,
-                "y": 285.72846,
-                "z": 558.25
-            },
-            "id": "MazeGame/MazeWalls/Phase_A/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_L2_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_R_Full/Static/Mov_Mid_Slider_Full_Arch_R2_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Door_Top_",
             "type": "FoundationPlanter_Long_01",
+            "ObjId": 1003011,
             "right": {
                 "x": -4.37114e-08,
                 "y": 0,
@@ -45328,16 +45831,16 @@
                 "z": 4.37114e-08
             },
             "position": {
-                "x": 573.4016,
-                "y": 285.73084,
-                "z": 563.356
+                "x": 536.152,
+                "y": 285.7775014,
+                "z": 543.3007
             },
-            "id": "MazeGame/MazeWalls/Phase_A/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Door_Top_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic/Mov_Mid_Slider_Full_Door_Top_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Door_Bot_",
-            "ObjId": 1100011,
             "type": "FoundationPlanter_Long_01",
+            "ObjId": 1003012,
             "right": {
                 "x": -4.37114e-08,
                 "y": 0,
@@ -45354,19 +45857,19 @@
                 "z": -4.37114e-08
             },
             "position": {
-                "x": 573.4016,
-                "y": 283.34561963,
-                "z": 563.356
+                "x": 536.152,
+                "y": 283.39228103,
+                "z": 543.3007
             },
-            "id": "MazeGame/MazeWalls/Phase_A/Mov_Slide_Full_1/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_R1_",
             "type": "FoundationPlanter_Long_01",
             "right": {
-                "x": -4.37114e-08,
+                "x": 1,
                 "y": 0,
-                "z": -1
+                "z": 0
             },
             "up": {
                 "x": 0,
@@ -45374,41 +45877,93 @@
                 "z": 0
             },
             "front": {
-                "x": 1,
+                "x": 0,
                 "y": 0,
-                "z": -4.37114e-08
+                "z": 1
             },
             "position": {
-                "x": 573.4016002231904,
-                "y": 283.348,
-                "z": 583.78057
+                "x": 542.2797,
+                "y": 283.3946614,
+                "z": 539.7263
             },
-            "id": "MazeGame/MazeWalls/Phase_B/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_R1_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_R_Full2/Static/Mov_Mid_Slider_Full_Arch_R1_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_R2_",
             "type": "FoundationPlanter_Long_01",
             "right": {
-                "x": -4.37114e-08,
+                "x": 1,
                 "y": 0,
-                "z": -1
+                "z": 0
             },
             "up": {
-                "x": -8.74228e-08,
+                "x": 0,
                 "y": -1,
-                "z": 3.82137297992e-15
+                "z": -8.74228e-08
             },
             "front": {
-                "x": -1,
+                "x": 0,
                 "y": 8.74228e-08,
-                "z": 4.37114e-08
+                "z": -1
             },
             "position": {
-                "x": 573.4016002231904,
-                "y": 285.72846,
-                "z": 583.78057
+                "x": 542.2797,
+                "y": 285.7751214,
+                "z": 539.7263
             },
-            "id": "MazeGame/MazeWalls/Phase_B/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_R2_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_R_Full2/Static/Mov_Mid_Slider_Full_Arch_R2_"
+        },
+        {
+            "name": "Mov_Mid_Slider_Full_Door_Top_",
+            "type": "FoundationPlanter_Long_01",
+            "ObjId": 1003021,
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": -1,
+                "z": -1.50996e-07
+            },
+            "front": {
+                "x": 0,
+                "y": 1.50996e-07,
+                "z": -1
+            },
+            "position": {
+                "x": 547.3857,
+                "y": 285.7775014,
+                "z": 539.7263
+            },
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_R_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Top_"
+        },
+        {
+            "name": "Mov_Mid_Slider_Full_Door_Bot_",
+            "type": "FoundationPlanter_Long_01",
+            "ObjId": 1003022,
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 547.3857,
+                "y": 283.39228103,
+                "z": 539.7263
+            },
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_R_Full2/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_L1_",
@@ -45429,11 +45984,11 @@
                 "z": -4.37114e-08
             },
             "position": {
-                "x": 573.4015997768096,
-                "y": 283.348,
-                "z": 573.56857
+                "x": 536.1519997768096,
+                "y": 283.3946614,
+                "z": 559.1302
             },
-            "id": "MazeGame/MazeWalls/Phase_B/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_L1_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full3/Static/Mov_Mid_Slider_Full_Arch_L1_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_L2_",
@@ -45454,16 +46009,16 @@
                 "z": 4.37114e-08
             },
             "position": {
-                "x": 573.4015997768096,
-                "y": 285.72846,
-                "z": 573.56857
+                "x": 536.1519997768096,
+                "y": 285.7751214,
+                "z": 559.1302
             },
-            "id": "MazeGame/MazeWalls/Phase_B/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_L2_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full3/Static/Mov_Mid_Slider_Full_Arch_L2_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Door_Top_",
-            "ObjId": 2001011,
             "type": "FoundationPlanter_Long_01",
+            "ObjId": 1002031,
             "right": {
                 "x": -4.37114e-08,
                 "y": 0,
@@ -45480,16 +46035,16 @@
                 "z": 4.37114e-08
             },
             "position": {
-                "x": 573.4016,
-                "y": 285.73084,
-                "z": 578.67457
+                "x": 536.152,
+                "y": 285.7775014,
+                "z": 564.2362
             },
-            "id": "MazeGame/MazeWalls/Phase_B/Mov_Slide_Full_1/Dynamic/Mov_Mid_Slider_Full_Door_Top_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full3/Dynamic/Mov_Mid_Slider_Full_Door_Top_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Door_Bot_",
-            "ObjId": 2001012,
             "type": "FoundationPlanter_Long_01",
+            "ObjId": 1002032,
             "right": {
                 "x": -4.37114e-08,
                 "y": 0,
@@ -45506,69 +46061,19 @@
                 "z": -4.37114e-08
             },
             "position": {
-                "x": 573.4016,
-                "y": 283.34561963,
-                "z": 578.67457
+                "x": 536.152,
+                "y": 283.39228103,
+                "z": 564.2362
             },
-            "id": "MazeGame/MazeWalls/Phase_B/Mov_Slide_Full_1/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Arch_R1_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 1,
-                "y": 0,
-                "z": -4.37114e-08
-            },
-            "position": {
-                "x": 573.4016002231904,
-                "y": 283.348,
-                "z": 599.0992
-            },
-            "id": "MazeGame/MazeWalls/Phase_C/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_R1_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Arch_R2_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": -8.74228e-08,
-                "y": -1,
-                "z": 3.82137297992e-15
-            },
-            "front": {
-                "x": -1,
-                "y": 8.74228e-08,
-                "z": 4.37114e-08
-            },
-            "position": {
-                "x": 573.4016002231904,
-                "y": 285.72846,
-                "z": 599.0992
-            },
-            "id": "MazeGame/MazeWalls/Phase_C/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_R2_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full3/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_L1_",
             "type": "FoundationPlanter_Long_01",
             "right": {
-                "x": -4.37114e-08,
+                "x": 1,
                 "y": 0,
-                "z": -1
+                "z": 0
             },
             "up": {
                 "x": 0,
@@ -45576,75 +46081,76 @@
                 "z": 0
             },
             "front": {
-                "x": 1,
+                "x": 0,
                 "y": 0,
-                "z": -4.37114e-08
+                "z": 1
             },
             "position": {
-                "x": 573.4015997768096,
-                "y": 283.348,
-                "z": 588.8872
+                "x": 547.3855,
+                "y": 283.3946614,
+                "z": 573.937939
             },
-            "id": "MazeGame/MazeWalls/Phase_C/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_L1_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full4/Static/Mov_Mid_Slider_Full_Arch_L1_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Arch_L2_",
             "type": "FoundationPlanter_Long_01",
             "right": {
-                "x": -4.37114e-08,
+                "x": 1,
                 "y": 0,
-                "z": -1
+                "z": 0
             },
             "up": {
-                "x": -8.74228e-08,
+                "x": 0,
                 "y": -1,
-                "z": 3.82137297992e-15
+                "z": -8.74228e-08
             },
             "front": {
-                "x": -1,
+                "x": 0,
                 "y": 8.74228e-08,
-                "z": 4.37114e-08
+                "z": -1
             },
             "position": {
-                "x": 573.4015997768096,
-                "y": 285.72846,
-                "z": 588.8872
+                "x": 547.3855,
+                "y": 285.7751214,
+                "z": 573.937939
             },
-            "id": "MazeGame/MazeWalls/Phase_C/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_L2_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full4/Static/Mov_Mid_Slider_Full_Arch_L2_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Door_Top_",
             "type": "FoundationPlanter_Long_01",
+            "ObjId": 1002041,
             "right": {
-                "x": -4.37114e-08,
+                "x": 1,
                 "y": 0,
-                "z": -1
+                "z": 0
             },
             "up": {
-                "x": -1.50996e-07,
+                "x": 0,
                 "y": -1,
-                "z": 6.6002465544e-15
+                "z": -1.50996e-07
             },
             "front": {
-                "x": -1,
+                "x": 0,
                 "y": 1.50996e-07,
-                "z": 4.37114e-08
+                "z": -1
             },
             "position": {
-                "x": 573.4016,
-                "y": 285.73084,
-                "z": 593.9932
+                "x": 542.2795,
+                "y": 285.7775014,
+                "z": 573.937939
             },
-            "id": "MazeGame/MazeWalls/Phase_C/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Door_Top_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full4/Dynamic/Mov_Mid_Slider_Full_Door_Top_"
         },
         {
             "name": "Mov_Mid_Slider_Full_Door_Bot_",
-            "ObjId": 3111011,
             "type": "FoundationPlanter_Long_01",
+            "ObjId": 1002042,
             "right": {
-                "x": -4.37114e-08,
+                "x": 1,
                 "y": 0,
-                "z": -1
+                "z": 0
             },
             "up": {
                 "x": 0,
@@ -45652,167 +46158,16 @@
                 "z": 0
             },
             "front": {
-                "x": 1,
-                "y": 0,
-                "z": -4.37114e-08
-            },
-            "position": {
-                "x": 573.4016,
-                "y": 283.34561963,
-                "z": 593.9932
-            },
-            "id": "MazeGame/MazeWalls/Phase_C/Mov_Slide_Full_1/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Arch_R1_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
                 "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 1,
                 "y": 0,
-                "z": -4.37114e-08
+                "z": 1
             },
             "position": {
-                "x": 573.4016002231904,
-                "y": 283.348,
-                "z": 614.4179
+                "x": 542.2795,
+                "y": 283.39228103,
+                "z": 573.937939
             },
-            "id": "MazeGame/MazeWalls/Phase_D/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_R1_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Arch_R2_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": -8.74228e-08,
-                "y": -1,
-                "z": 3.82137297992e-15
-            },
-            "front": {
-                "x": -1,
-                "y": 8.74228e-08,
-                "z": 4.37114e-08
-            },
-            "position": {
-                "x": 573.4016002231904,
-                "y": 285.72846,
-                "z": 614.4179
-            },
-            "id": "MazeGame/MazeWalls/Phase_D/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_R2_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Arch_L1_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 1,
-                "y": 0,
-                "z": -4.37114e-08
-            },
-            "position": {
-                "x": 573.4015997768096,
-                "y": 283.348,
-                "z": 604.2059
-            },
-            "id": "MazeGame/MazeWalls/Phase_D/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_L1_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Arch_L2_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": -8.74228e-08,
-                "y": -1,
-                "z": 3.82137297992e-15
-            },
-            "front": {
-                "x": -1,
-                "y": 8.74228e-08,
-                "z": 4.37114e-08
-            },
-            "position": {
-                "x": 573.4015997768096,
-                "y": 285.72846,
-                "z": 604.2059
-            },
-            "id": "MazeGame/MazeWalls/Phase_D/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Arch_L2_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Door_Top_",
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": -1.50996e-07,
-                "y": -1,
-                "z": 6.6002465544e-15
-            },
-            "front": {
-                "x": -1,
-                "y": 1.50996e-07,
-                "z": 4.37114e-08
-            },
-            "position": {
-                "x": 573.4016,
-                "y": 285.73084,
-                "z": 609.3119
-            },
-            "id": "MazeGame/MazeWalls/Phase_D/Mov_Slide_Full_1/Static/Mov_Mid_Slider_Full_Door_Top_"
-        },
-        {
-            "name": "Mov_Mid_Slider_Full_Door_Bot_",
-            "ObjId": 4112011,
-            "type": "FoundationPlanter_Long_01",
-            "right": {
-                "x": -4.37114e-08,
-                "y": 0,
-                "z": -1
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 1,
-                "y": 0,
-                "z": -4.37114e-08
-            },
-            "position": {
-                "x": 573.4016,
-                "y": 283.34561963,
-                "z": 609.3119
-            },
-            "id": "MazeGame/MazeWalls/Phase_D/Mov_Slide_Full_1/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
+            "id": "MazeGame/MazeWalls/Phase_A/Slide_L_Full4/Dynamic/Mov_Mid_Slider_Full_Door_Bot_"
         },
         {
             "name": "DeployCam",

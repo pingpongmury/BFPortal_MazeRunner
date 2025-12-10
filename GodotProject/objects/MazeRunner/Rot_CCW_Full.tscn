@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu4m37yj32gh0"]
+
+[ext_resource type="Script" uid="uid://qcetg8ieq7pa" path="res://scripts/MazeRunner/MazeWall_get_movable.gd" id="1_jgvci"]
+[ext_resource type="Script" uid="uid://cbi63a1oe0kw6" path="res://scripts/MazeRunner/MazeWall_update_movable.gd" id="2_ryhpx"]
+[ext_resource type="PackedScene" uid="uid://7jspwxisvdau" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="3_05xye"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chi6s"]
+albedo_color = Color(0.552, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpps7"]
+albedo_color = Color(0.552941, 1, 1, 1)
+
+[node name="Rotate_CCW_Full" type="Node3D"]
+script = ExtResource("1_jgvci")
+
+[node name="Static" type="Node3D" parent="."]
+script = ExtResource("2_ryhpx")
+height = 0
+
+[node name="Dynamic" type="Node3D" parent="."]
+script = ExtResource("2_ryhpx")
+ObjId = 11009
+movable = true
+height = 0
+movement_type = 1
+direction = 1
+
+[node name="Mov_Mid_Slider_Full_Door_Bot_" parent="Dynamic" instance=ExtResource("3_05xye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
+ObjId = 11010
+
+[node name="Mesh" parent="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_chi6s")
+
+[node name="CollisionShape3D" parent="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[node name="Mov_Mid_Slider_Full_Door_Top_" parent="Dynamic" instance=ExtResource("3_05xye")]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
+ObjId = 11011
+
+[node name="Mesh" parent="Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gpps7")
+
+[node name="CollisionShape3D" parent="Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh/Mesh/StaticBody3D" index="0"]
+visible = false
+
+[editable path="Dynamic/Mov_Mid_Slider_Full_Door_Bot_"]
+[editable path="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[editable path="Dynamic/Mov_Mid_Slider_Full_Door_Top_"]
+[editable path="Dynamic/Mov_Mid_Slider_Full_Door_Top_/Mesh"]

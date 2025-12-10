@@ -30,6 +30,8 @@
 !GodotProject/addons/
 !GodotProject/addons/floorgen/
 !GodotProject/addons/floorgen/**
+!GodotProject/addons/snappy/
+!GodotProject/addons/snappy/**
 
 # Project Scene Library
 !GodotProject/addons/

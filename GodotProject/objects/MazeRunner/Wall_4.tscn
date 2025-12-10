@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://daflghwpqpjnd"]
+
+[ext_resource type="Script" uid="uid://d3v6jwiiqqv1w" path="res://scripts/MazeRunner/static_makeLocal.gd" id="1_0dhau"]
+[ext_resource type="PackedScene" uid="uid://7jspwxisvdau" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_kfvr1"]
+
+[node name="Wall_x4_" type="Node3D"]
+script = ExtResource("1_0dhau")
+
+[node name="FoundationPlanter_Long_01" parent="." instance=ExtResource("2_kfvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="." instance=ExtResource("2_kfvr1")]
+
+[node name="FoundationPlanter_Long_03" parent="." instance=ExtResource("2_kfvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="." instance=ExtResource("2_kfvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, 0, 0)
+
+[node name="FoundationPlanter_Long_05" parent="." instance=ExtResource("2_kfvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_06" parent="." instance=ExtResource("2_kfvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, 0, 0)
+
+[node name="FoundationPlanter_Long_07" parent="." instance=ExtResource("2_kfvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_08" parent="." instance=ExtResource("2_kfvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, 0, 0)

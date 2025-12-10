@@ -2,7 +2,9 @@
 const GLOBAL_TICK_RATE: number = 0.034; //in seconds (~30 ticks per second)
 
 //MAZE WALLS
-const MAZE_WALL_DIMENSIONS = {width: 5.106211, height: 3.115628, depth: 1.586211}; //FoundationPlanter_Long_01
+//const MAZE_WALL_DIMENSIONS = {width: 5.106211, height: 3.115628, depth: 1.586211}; //FoundationPlanter_Long_01 Defaults
+//moving wall part color: 8dffff
+const MAZE_WALL_DIMENSIONS = {width: 5.106211, height: 3.0, depth: 1.586211}; //FoundationPlanter_Long_01
 
 //Phase Open/Close Speeds (in seconds) *MUST BE LESS THAN CORRESPONDING PHASE TIME*
 const MAZE_WALL_PHASE_MOVE_SPEEDS : number[] = [0.5,1,5,10]; //Phase A, B, C, D
@@ -11,10 +13,10 @@ const MAZE_WALL_PHASE_MOVE_SPEEDS : number[] = [0.5,1,5,10]; //Phase A, B, C, D
 const MAZE_WALL_PHASE_PERIOD : number[] = [5,3,10,30]; //Phase A, B, C, D
 
 //Phase Walls ObjIds
-const MAZE_PHASE_A_WALL_IDS : number[] = [1100011];
-const MAZE_PHASE_B_WALL_IDS : number[] = [2001011,2001012];
-const MAZE_PHASE_C_WALL_IDS : number[] = [3111011];
-const MAZE_PHASE_D_WALL_IDS : number[] = [4112011];
+const MAZE_PHASE_A_WALL_IDS : number[] = [1002011];
+const MAZE_PHASE_B_WALL_IDS : number[] = [];
+const MAZE_PHASE_C_WALL_IDS : number[] = [];
+const MAZE_PHASE_D_WALL_IDS : number[] = [];
 
 //Phase Array
 const MAZE_PHASE_IDS: number[][] = [MAZE_PHASE_A_WALL_IDS, MAZE_PHASE_B_WALL_IDS, MAZE_PHASE_C_WALL_IDS, MAZE_PHASE_D_WALL_IDS];
@@ -35,6 +37,9 @@ const EMPLACEMENT_SPAWNER_OFFSET: number = 300; //Emplacement Spawner IDs start 
 //Enemy Team
 const ENEMY_TEAM: mod.Team = mod.GetTeam(2);
 let enemyTeamSize: number = 0;
+
+//Constants
+const PI = mod.Pi();
 
 class MazeWall{
     wall_id: number = -1;
@@ -122,6 +127,7 @@ class MazeWall{
     }
 
     calculateMovementVectors(initPos: mod.Vector, initRot: mod.Vector){
+        mod.SendErrorReport(mod.Message(mod.RoundToInteger(mod.YComponentOf(initRot) /  PI/2)));
         if(this.moveType === "Linear"){
             switch(this.direction){
                 case "Up":
@@ -142,11 +148,19 @@ class MazeWall{
                     break;
                 case "Left":
                     //move left
-                    this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos) - MAZE_WALL_DIMENSIONS.width, mod.YComponentOf(initPos), mod.ZComponentOf(initPos)), initRot);
+                    if(false){
+                        this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos) - MAZE_WALL_DIMENSIONS.width, mod.YComponentOf(initPos), mod.ZComponentOf(initPos)), initRot);
+                    }else{
+                        this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos), mod.YComponentOf(initPos), mod.ZComponentOf(initPos) - MAZE_WALL_DIMENSIONS.width), initRot);
+                    }
                     break;
                 case "Right":
                     //move right
-                    this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos) + MAZE_WALL_DIMENSIONS.width, mod.YComponentOf(initPos), mod.ZComponentOf(initPos)), initRot);
+                    if(false){
+                        this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos) + MAZE_WALL_DIMENSIONS.width, mod.YComponentOf(initPos), mod.ZComponentOf(initPos)), initRot);
+                    }else{
+                        this.openTransform = mod.CreateTransform(mod.CreateVector(mod.XComponentOf(initPos), mod.YComponentOf(initPos), mod.ZComponentOf(initPos) + MAZE_WALL_DIMENSIONS.width), initRot);
+                    }
                     break;
                 default:
                     break;
@@ -241,7 +255,7 @@ function initializeMazePhases(): MazePhase[]{
 export async function OnGameModeStarted(){
     const mazePhases: MazePhase[] = initializeMazePhases();
     mod.SendErrorReport(mod.Message(mod.stringkeys.MAZE_init, mazePhases.length));
-    spawnAI();
+    //spawnAI();
     tickUpdate();
     mazeUpdate(mazePhases);
 
@@ -254,8 +268,8 @@ async function tickUpdate(){
     while(true){
         await mod.Wait(GLOBAL_TICK_RATE);
         if(mod.CountOf(mod.AllPlayers()) < 3){
-            spawnAI();
-            enemyTeamSize += 1;
+            //spawnAI();
+            //enemyTeamSize += 1;
         }
         
     }
@@ -283,6 +297,9 @@ export async function mazeUpdate(mazePhases: MazePhase[]){
 //export async function OnSpawnerSpawned(eventPlayer: mod.Player, eventSpawner: mod.Spawner) {}
 
 /*Note to future self: 
+
+    LINEAR WALLS ARE BROKEN. Need to compensate for rotated doors. If mod.YComponentOf(mod.GetObjectRotation(wallObj)) is not 0, then the door is rotated and I need to adjust the openTransform accordingly.
+
     I was working on getting spawners working. AISpawners are now functional, but loot, vehicle, and emplacement spawners are not yet implemented.
     See USEFUL_FUNCS.ts for relevant functions.
 
