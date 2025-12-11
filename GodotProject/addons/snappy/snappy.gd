@@ -19,7 +19,7 @@ func _handles(object):
 
 func _forward_3d_draw_over_viewport(overlay):
 	if origin_2d != null:
-		overlay.draw_circle(origin_2d, 4, Color.YELLOW)
+		overlay.draw_circle(origin_2d, 4, Color.RED)
 
 var first_point : Vector3
 var second_point : Vector3
@@ -66,9 +66,16 @@ func _forward_3d_gui_input(camera, event):
 				var vector_between = second_point - first_point
 				print("Vector from first to second point:", vector_between)
 
-				# Move first object so first_point aligns with second_point
+				# Register the movement with UndoRedo
 				if first_object != null:
-					first_object.global_translate(vector_between)
+					var old_pos = first_object.global_position
+					var new_pos = old_pos + vector_between
+
+					undo_redo.create_action("Snap Vertex Move")
+					undo_redo.add_do_property(first_object, "global_position", new_pos)
+					undo_redo.add_undo_property(first_object, "global_position", old_pos)
+					undo_redo.commit_action()
+
 					print("Moved first object by vector:", vector_between)
 
 				# Reset for next operation
@@ -77,7 +84,7 @@ func _forward_3d_gui_input(camera, event):
 				second_point = Vector3()
 				first_object = null
 				second_object = null
-#blah
+
 		update_overlays()
 		return true
 	else:
@@ -86,9 +93,6 @@ func _forward_3d_gui_input(camera, event):
 		prompt_printed = false
 		update_overlays()
 		return false
-
-
-
 
 func _on_selection_changed():
 	var nodes = selection.get_selected_nodes()
@@ -107,7 +111,7 @@ func find_meshes(node : Node3D) -> Array:
 			meshes += find_meshes(child)
 	return meshes
 
-func find_closest_point(meshes : Array, from : Vector3, direction : Vector3) -> Vector3:
+func find_closest_point(meshes: Array, from: Vector3, direction: Vector3) -> Vector3:
 	var closest := VECTOR_INF
 	var closest_distance := INF
 	var segment_start := from
@@ -123,13 +127,44 @@ func find_closest_point(meshes : Array, from : Vector3, direction : Vector3) -> 
 			else:
 				vertices.append(Vector3.ZERO)
 
+		# Snap to vertices first
 		for i in range(vertices.size()):
-			var current_point: Vector3 = mesh.global_transform * vertices[i]
-			var current_on_ray := Geometry3D.get_closest_point_to_segment_uncapped(
-				current_point, segment_start, segment_end)
-			var current_distance := current_on_ray.distance_to(current_point)
-			if closest == VECTOR_INF or current_distance < closest_distance:
-				closest = current_point
-				closest_distance = current_distance
+			var v_global = mesh.global_transform * vertices[i]
+			var on_ray = Geometry3D.get_closest_point_to_segment_uncapped(v_global, segment_start, segment_end)
+			var dist = on_ray.distance_to(v_global)
+			if dist < closest_distance:
+				closest_distance = dist
+				closest = v_global
+
+		# Find Midpoints
+		var edges = get_edges(vertices)
+		for edge in edges:
+			var v1 = mesh.global_transform * edge[0]
+			var v2 = mesh.global_transform * edge[1]
+			var midpoint = (v1 + v2) * 0.5
+			var on_ray = Geometry3D.get_closest_point_to_segment_uncapped(midpoint, segment_start, segment_end)
+			var dist = on_ray.distance_to(midpoint)
+			if dist < closest_distance:
+				closest_distance = dist
+				closest = midpoint
 
 	return closest
+	
+func get_edges(vertices: PackedVector3Array) -> Array:
+	var edges := []
+	var edge_set := {}
+	for i in range(0, vertices.size(), 3): # Triangles
+		var tri = [vertices[i], vertices[i+1], vertices[i+2]]
+		for j in range(3):
+			var a = tri[j]
+			var b = tri[(j+1)%3]
+			# Create a consistent key by sorting string representations
+			var key = ""
+			if str(a) < str(b):
+				key = str(a) + "-" + str(b)
+			else:
+				key = str(b) + "-" + str(a)
+			if not edge_set.has(key):
+				edge_set[key] = true
+				edges.append([a, b])
+	return edges

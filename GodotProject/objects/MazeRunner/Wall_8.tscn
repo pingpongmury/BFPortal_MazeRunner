@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsh62dng3mud5"]
+
+[ext_resource type="Script" uid="uid://d3v6jwiiqqv1w" path="res://scripts/MazeRunner/static_makeLocal.gd" id="1_cntwb"]
+[ext_resource type="PackedScene" uid="uid://7jspwxisvdau" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_yqqn0"]
+
+[node name="Wall_x8" type="Node3D"]
+script = ExtResource("1_cntwb")
+
+[node name="FoundationPlanter_Long_01" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_05" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_06" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_07" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_08" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.3186, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_09" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_10" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 10.2124, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_11" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_12" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1062, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_13" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4248, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_14" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 20.4248, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_15" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_16" parent="." instance=ExtResource("2_yqqn0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 15.3186, -0.729034, -0.000106812)
