@@ -1,61 +1,46 @@
 @tool
 extends Node
 
-#Door Numbering Scheme:
-#   {Phase}         {Height}         {Movement Type}                       {Direction}                 {doorIndex} {doorIndex}  {compIndex}
-#{1:A,2:B,etc.}  {0:Full,1:Half}  {0:Linear,1:Rotational}  {0:UP/CW,1:DOWN/CCW,2:LEFT/Up,3:RIGHT/Down}    {0-9}       {0-9}        {1-9}
-#Example:
-#ObjId = 1103172 would correspond to a half-height door in phase A that moves linearly to the right and is the 17th of that type with components enumerated with compIndex (in this case component 2)
-
-# Movable object has its own unique ObjId
 @export var ObjId: int = -1
 
-# Controls if object is movable
 @export var movable: bool = false:
 	set(value):
 		movable = value
-		_notify_grandparent_of_change()
+		call_deferred("_notify_phase")
 
-
-# Internal storage for height (int)
 var height: int = 0:
 	set(value):
 		height = value
-		_notify_grandparent_of_change()
+		call_deferred("_notify_phase")
 
-
-# Controls type of movement
 var movement_type: int = 0:
 	set(value):
 		movement_type = value
-		_notify_grandparent_of_change()
+		call_deferred("_notify_phase")
 
-
-# Internal storage for direction (int)
 var _direction: int = 0
 func _get(property: StringName):
 	if property == "direction":
 		return _direction
+	return null
+
 func _set(property: StringName, value) -> bool:
 	if property == "direction":
 		_direction = value
-		_notify_grandparent_of_change()
+		call_deferred("_notify_phase")
 		return true
 	return false
 
-
-# Display movement type and direction options only if movable
 func _get_property_list() -> Array:
 	var props: Array = []
-	
+
 	props.append({
 		"name": "height",
 		"type": TYPE_INT,
 		"hint": PROPERTY_HINT_ENUM,
 		"hint_string": "Full,Half"
 	})
-	
-	# Add normal movement_type dropdown
+
 	if movable:
 		props.append({
 			"name": "movement_type",
@@ -64,7 +49,6 @@ func _get_property_list() -> Array:
 			"hint_string": "Linear,Rotational"
 		})
 
-		# Now add direction based on movement_type
 		if movement_type == 0:
 			props.append({
 				"name": "direction",
@@ -82,8 +66,43 @@ func _get_property_list() -> Array:
 
 	return props
 
+func _ready() -> void:
+	# Watch for DoorComponents added/removed
+	if not is_connected("child_entered_tree", Callable(self, "_on_component_change")):
+		connect("child_entered_tree", Callable(self, "_on_component_change"))
+	if not is_connected("child_exiting_tree", Callable(self, "_on_component_change")):
+		connect("child_exiting_tree", Callable(self, "_on_component_change"))
 
-func _notify_grandparent_of_change():
-	if get_parent() != null:
-		var grandparent = get_parent().get_parent()
-		grandparent._refresh_wall_ids()
+	call_deferred("_notify_phase")
+
+	if movable:
+		_set_color()
+
+func _on_component_change(_child: Node) -> void:
+	call_deferred("_notify_phase")
+
+func _notify_phase():
+	var door = get_parent()
+	if door == null:
+		return
+	var phase = door.get_parent()
+	if phase == null:
+		return
+
+	phase.call_deferred("_refresh_wall_ids")
+
+func _set_color():
+	for child in get_children():
+		if child.get("color") and get_parent() and get_parent().get_parent():
+			var phaseID = get_parent().get_parent().get("ObjId")
+			match highest_digit(phaseID):
+				-1: continue
+				1: child.set("color", Color.DARK_RED)
+				2: child.set("color", Color.NAVY_BLUE)
+				3: child.set("color", Color.DARK_GREEN)
+				4: child.set("color", Color.DARK_GOLDENROD)
+
+func highest_digit(n: int) -> int:
+	if n <= 0:
+		return -1
+	return n / pow(10, int(floor(log(n)/log(10))))

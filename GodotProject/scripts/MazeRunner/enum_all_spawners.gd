@@ -20,5 +20,6 @@ func _set(property: StringName, value) -> bool:
 	return false
 
 func _on_run_action_pressed():
-	for child in get_children():
-		child._on_run_action_pressed()
+	if get_children().size() != 0:
+		for child in get_children():
+			child._on_run_action_pressed()

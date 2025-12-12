@@ -1,40 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://1c5i2yx8dkk4"]
+[gd_scene load_steps=4 format=3 uid="uid://1c5i2yx8dkk4"]
 
-[ext_resource type="Script" uid="uid://qcetg8ieq7pa" path="res://scripts/MazeRunner/MazeWall_get_movable.gd" id="1_maow5"]
-[ext_resource type="Script" uid="uid://cbi63a1oe0kw6" path="res://scripts/MazeRunner/MazeWall_update_movable.gd" id="2_fylcr"]
-[ext_resource type="PackedScene" uid="uid://7jspwxisvdau" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="3_4e6jd"]
+[ext_resource type="Script" uid="uid://qcetg8ieq7pa" path="res://scripts/MazeRunner/MazeWall_get_movable.gd" id="1_7bkbp"]
+[ext_resource type="Script" uid="uid://cbi63a1oe0kw6" path="res://scripts/MazeRunner/MazeWall_update_movable.gd" id="2_048d2"]
+[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="3_fuin3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bkbp"]
-albedo_color = Color(0.552941, 1, 1, 1)
-
-[node name="Rotate_CCW_Half" type="Node3D"]
-script = ExtResource("1_maow5")
+[node name="Rot_CCW_Half" type="Node3D"]
+script = ExtResource("1_7bkbp")
 
 [node name="Static" type="Node3D" parent="."]
-script = ExtResource("2_fylcr")
+script = ExtResource("2_048d2")
 height = 0
 
-[node name="Mov_Mid_Slider_Full_Door_Top_" parent="Static" instance=ExtResource("3_4e6jd")]
-transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
-ObjId = 111011
+[node name="Mov_Mid_Slider_Full_Arch_R2_2" parent="Static" instance=ExtResource("3_fuin3")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.000209808, 2.38046, 0)
 
 [node name="Dynamic" type="Node3D" parent="."]
-script = ExtResource("2_fylcr")
-ObjId = 111009
+script = ExtResource("2_048d2")
 movable = true
 height = 1
 movement_type = 1
 direction = 1
 
-[node name="Mov_Mid_Slider_Full_Door_Bot_" parent="Dynamic" instance=ExtResource("3_4e6jd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
-ObjId = 111010
-
-[node name="Mesh" parent="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_7bkbp")
-
-[node name="CollisionShape3D" parent="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh/Mesh/StaticBody3D" index="0"]
-visible = false
-
-[editable path="Dynamic/Mov_Mid_Slider_Full_Door_Bot_"]
-[editable path="Dynamic/Mov_Mid_Slider_Full_Door_Bot_/Mesh"]
+[node name="Mov_Mid_Slider_Full_Arch_R1_2" parent="Dynamic" instance=ExtResource("3_fuin3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000210285, 0, 0)

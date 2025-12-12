@@ -1,91 +1,102 @@
 @tool
 extends Node
 
-
-# Parent has its own unique ObjId
+# Phase unique ObjId
 @export var ObjId: int = -1:
 	set(value):
 		ObjId = value
-		_refresh_wall_ids()
+		call_deferred("_refresh_wall_ids")
 
-
-# Signal to notify the parent when ObjId changes
 signal phase_obj_id_changed(new_id)
 
-
-# Internal storage of wall ObjIds
+# Storage for DoorComponent ObjIds
 var wall_ids: Array = []
 
-
-# Exported getter to show dynamic wall IDs in Inspector
 @export var _wall_ids: Array:
 	get:
-		if wall_ids.size() != _checkNumGGChild(): #if there's not the same number of walls as there are elements in wall id array
+		if wall_ids.size() != _checkNumGGChild():
 			_refresh_wall_ids()
 		return wall_ids
 
+func _ready():
+	# Watch for Doors added or removed
+	if not is_connected("child_entered_tree", Callable(self, "_on_direct_child_change")):
+		connect("child_entered_tree", Callable(self, "_on_direct_child_change"))
+	if not is_connected("child_exiting_tree", Callable(self, "_on_direct_child_change")):
+		connect("child_exiting_tree", Callable(self, "_on_direct_child_change"))
 
-# Refresh wall_ids for direct children only
+	call_deferred("_refresh_wall_ids")
+
+
+func _on_direct_child_change(_child: Node) -> void:
+	call_deferred("_refresh_wall_ids")
+
+
 func _refresh_wall_ids() -> void:
+	if not is_inside_tree():
+		return
+
 	wall_ids.clear()
-	var ctr: int = 1
-	
-	for child in get_children():
-		for grandchild in child.get_children():
+
+	for child in get_children(): # Doors
+		for grandchild in child.get_children(): # Static/Dynamic
 			if grandchild.get("movable"):
-				var tempWallId: int = self.ObjId + (100000 * grandchild.get("height")) + (10000 * grandchild.get("movement_type")) + (1000 * grandchild.get("direction") + 10)
+				var tempWallId: int = ObjId
+				tempWallId += 100000 * int(grandchild.get("height"))
+				tempWallId += 10000  * int(grandchild.get("movement_type"))
+				tempWallId += 1000   * int(grandchild.get("direction"))
+				tempWallId += 10
+
 				var index := wall_ids.find(tempWallId + 1)
-				while index != -1: #while this id already exists
+				while index != -1:
 					tempWallId += 10
 					index = wall_ids.find(tempWallId + 1)
-				grandchild.set("ObjId",tempWallId) #Set ObjId for door root node
-				var ggindex = 1
-				for ggchild in grandchild.get_children(): #For all components in door root node
-					ggchild.set("ObjId",tempWallId + ggindex) #Give them a unique ObjId
-					wall_ids.append(tempWallId + ggindex) #And add them to the list of moveable door objects
-					ggindex += 1
-				grandchild.notify_property_list_changed()
-			
-		notify_property_list_changed()
- 
 
-func _ready() -> void: 
-	if wall_ids.size() != _checkNumGGChild(): #if there's not the same number of moving wall components as there are elements in wall id array
-		_refresh_wall_ids()
+				grandchild.set("ObjId", tempWallId)
+
+				var ggindex := 1
+				for ggchild in grandchild.get_children(): # DoorComponents
+					ggchild.set("ObjId", tempWallId + ggindex)
+					wall_ids.append(tempWallId + ggindex)
+					ggindex += 1
+
+				grandchild.notify_property_list_changed()
+
+	notify_property_list_changed()
+
 
 func _get_property_list() -> Array:
-	var props: Array = []
-	
-	props.append({
-		"name": "Export Wall IDs",
-		"type": TYPE_BOOL,
-		"usage": PROPERTY_USAGE_EDITOR,
-		"hint": PROPERTY_HINT_NONE,
-		"hint_string": "",
-	})
-	
-	return props
+	return [
+		{
+			"name": "Export Wall IDs",
+			"type": TYPE_BOOL,
+			"usage": PROPERTY_USAGE_EDITOR
+		}
+	]
+
 
 func _set(property: StringName, value) -> bool:
 	if property == "Export Wall IDs":
-		_on_run_action_pressed()
+		_export_wall_ids()
 		return true
 	return false
 
-func _on_run_action_pressed():
-	var out := "const MAZE_PHASE_"
-	out += char(self.ObjId / 1000000 + 64)
-	out += "_WALL_IDS : number[] = ["
-	var count := wall_ids.size()
 
-	for i in count:
+func _export_wall_ids():
+	var out := "const MAZE_PHASE_"
+	out += char(int(ObjId / 1000000) + 64)
+	out += "_WALL_IDS : number[] = ["
+
+	for i in range(wall_ids.size()):
 		out += str(wall_ids[i])
-		if i < count - 1:
+		if i < wall_ids.size() - 1:
 			out += ","
+
 	out += "];"
 	print(out)
 
-func _checkNumGGChild():
+
+func _checkNumGGChild() -> int:
 	var numGGChild: int = 0
 	for child in get_children():
 		for gchild in child.get_children():

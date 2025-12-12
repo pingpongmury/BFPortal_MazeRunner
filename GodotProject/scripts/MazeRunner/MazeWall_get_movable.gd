@@ -1,23 +1,33 @@
 @tool
-extends Node
+extends Node3D
 
-# Each child has its own unique ObjId
-@export var ObjId: int = -1:
-	set(value):
-		ObjId = value
+# Unique Door ObjId
+@export var ObjId: int = -1
 
-func _enter_tree():
-	# Enables Editable Children, and Make Local programatically
-	if get_parent().name.begins_with("Phase_") and !is_editable_instance(self):
-		get_parent().set_editable_instance(self, true);
-		make_local(self)
+var is_baked = false
+var is_local = false
+
+func _notification(what):
+	if what == NOTIFICATION_PARENTED:
+		var phase = get_parent()
+		if phase != null:
+			phase.call_deferred("_refresh_wall_ids")
+	elif what == NOTIFICATION_UNPARENTED:
+		var phase = get_parent()
+		if phase != null:
+			phase.call_deferred("_refresh_wall_ids")
+
+
+func _on_bake():
+	if not is_baked and Engine.is_editor_hint():
+		_make_local()
+		is_baked = true
+
+func _make_local():
+	if not is_local:
+		self.owner = get_tree().edited_scene_root
 		for child in get_children():
-			make_local(child)
+			child.owner = get_tree().edited_scene_root
 			for grandchild in child.get_children():
-				make_local(grandchild)
-		set_display_folded(true)
-
-# Call this on the root node of the instanced scene
-func make_local(node: Node):
-	node.scene_file_path = ""
-	node.owner = get_tree().edited_scene_root
+				grandchild.owner = get_tree().edited_scene_root
+		is_local = true

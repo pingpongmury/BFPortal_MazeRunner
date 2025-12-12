@@ -7,13 +7,14 @@ extends Node
 		ObjId = value
 		_refresh_ids()
 
-# Refresh vehicle spawner ids for direct children only
+# Refresh ai spawner ids for direct children only
 func _refresh_ids() -> void:
-	var ctr: int = 1	
-	for child in get_children():
-		child.set("ObjId",self.ObjId + ctr)
-		ctr += 1
-	notify_property_list_changed()
+	var ctr: int = 1
+	if get_children().size() != 0:
+		for child in get_children():
+			child.set("ObjId",self.ObjId + ctr)
+			ctr += 1
+		notify_property_list_changed()
  
 func _ready():
 	# Connect signals for when children enter or exit this node

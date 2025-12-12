@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1dvpjdioehpw"]
 
 [ext_resource type="Script" uid="uid://d3v6jwiiqqv1w" path="res://scripts/MazeRunner/static_makeLocal.gd" id="1_6p4oj"]
-[ext_resource type="PackedScene" uid="uid://7jspwxisvdau" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_6immi"]
+[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_6immi"]
 
 [node name="Wall_x1_" type="Node3D"]
 script = ExtResource("1_6p4oj")
