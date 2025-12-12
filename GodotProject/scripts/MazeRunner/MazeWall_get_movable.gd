@@ -12,10 +12,18 @@ func _notification(what):
 		var phase = get_parent()
 		if phase != null:
 			phase.call_deferred("_refresh_wall_ids")
+		var statDyns = self.get_children()
+		for statDyn in statDyns:
+			if statDyn.get("movable"):
+				statDyn._set_color()
 	elif what == NOTIFICATION_UNPARENTED:
-		var phase = get_parent()
+		var phase = get_parent()	
 		if phase != null:
 			phase.call_deferred("_refresh_wall_ids")
+		var statDyns = self.get_children()
+		for statDyn in statDyns:
+			if statDyn.get("movable"):
+				statDyn._set_color()
 
 
 func _on_bake():

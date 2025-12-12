@@ -3525,6 +3525,30 @@ script = ExtResource("8_gvlbj")
 [node name="Phase_A" type="Node3D" parent="MazeGame/MazeWalls"]
 script = ExtResource("11_4jtn2")
 ObjId = 1000000
+_wall_ids = [1113011]
+
+[node name="Rot_D_Half2" parent="MazeGame/MazeWalls/Phase_A" instance=ExtResource("16_hv6f1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38031, -0.316437, -33.1881)
+ObjId = null
+
+[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Rot_D_Half2"]
+script = ExtResource("11_8pssg")
+height = 0
+
+[node name="Mov_Mid_Slider_Full_Arch_R2_2" parent="MazeGame/MazeWalls/Phase_A/Rot_D_Half2/Static" instance=ExtResource("23_awpc0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.000209808, 2.38046, 0)
+
+[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Rot_D_Half2"]
+script = ExtResource("11_8pssg")
+ObjId = 1113010
+movable = true
+height = 1
+movement_type = 1
+direction = 3
+
+[node name="Mov_Mid_Slider_Full_Arch_R1_2" parent="MazeGame/MazeWalls/Phase_A/Rot_D_Half2/Dynamic" instance=ExtResource("23_awpc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000210285, 0, 0)
+ObjId = 1113011
 
 [node name="Phase_B" type="Node3D" parent="MazeGame/MazeWalls"]
 script = ExtResource("11_4jtn2")
@@ -3537,30 +3561,6 @@ ObjId = 3000000
 [node name="Phase_D" type="Node3D" parent="MazeGame/MazeWalls"]
 script = ExtResource("11_4jtn2")
 ObjId = 4000000
-_wall_ids = [4113011]
-
-[node name="Rot_D_Half2" parent="MazeGame/MazeWalls/Phase_D" instance=ExtResource("16_hv6f1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38031, -0.316437, -33.1881)
-ObjId = null
-
-[node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rot_D_Half2"]
-script = ExtResource("11_8pssg")
-height = 0
-
-[node name="Mov_Mid_Slider_Full_Arch_R2_2" parent="MazeGame/MazeWalls/Phase_D/Rot_D_Half2/Static" instance=ExtResource("23_awpc0")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.000209808, 2.38046, 0)
-
-[node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rot_D_Half2"]
-script = ExtResource("11_8pssg")
-ObjId = 4113010
-movable = true
-height = 1
-movement_type = 1
-direction = 3
-
-[node name="Mov_Mid_Slider_Full_Arch_R1_2" parent="MazeGame/MazeWalls/Phase_D/Rot_D_Half2/Dynamic" instance=ExtResource("23_awpc0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000210285, 0, 0)
-ObjId = 4113011
 
 [node name="Camera3D" type="Camera3D" parent="MazeGame"]
 transform = Transform3D(-0.999031, -0.0163998, 0.0408328, 0.00360479, 0.894332, 0.447389, -0.0438552, 0.447103, -0.893407, 6.22363, 150.112, -110.771)

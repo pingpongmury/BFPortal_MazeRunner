@@ -105,4 +105,7 @@ func _set_color():
 func highest_digit(n: int) -> int:
 	if n <= 0:
 		return -1
-	return n / pow(10, int(floor(log(n)/log(10))))
+	while n >= 10:
+		n /= 10  # integer division
+	print(n)
+	return n
