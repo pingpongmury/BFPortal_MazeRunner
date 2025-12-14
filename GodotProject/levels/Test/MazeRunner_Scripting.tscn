@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx1cgei2chlhj"]
+
+[ext_resource type="Script" uid="uid://ba0dfkrmwceom" path="res://scripts/MazeRunner_CLEAN/MazeGame.gd" id="1_0iubq"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="1_d48gs"]
+[ext_resource type="PackedScene" uid="uid://cnnbdpektacs0" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_0qe55"]
+[ext_resource type="Script" uid="uid://diuxah55r86d2" path="res://scripts/MazeRunner_CLEAN/Doors.gd" id="2_gv4xo"]
+[ext_resource type="PackedScene" uid="uid://8l4u83iakwpa" path="res://objects/MazeRunner_CLEAN/DoorExample_.tscn" id="4_0qe55"]
+
+[node name="MazeGame" type="Node3D"]
+script = ExtResource("1_0iubq")
+
+[node name="Maze Template" type="MeshInstance3D" parent="."]
+
+[node name="Floor" type="Node3D" parent="."]
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Static" type="Node3D" parent="Walls"]
+
+[node name="FoundationPlanter_Long_01" parent="Walls/Static" instance=ExtResource("2_0qe55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5769, 0, -0.202881)
+
+[node name="Doors" type="Node3D" parent="Walls"]
+script = ExtResource("2_gv4xo")
+
+[node name="Door_" parent="Walls/Doors" instance=ExtResource("4_0qe55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239014, 0, -0.661255)
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.999031, -0.0163998, 0.0408328, 0.00360479, 0.894332, 0.447389, -0.0438552, 0.447103, -0.893407, 0, 10.5579, 0)
+fov = 37.2
+
+[node name="DeployCam" parent="Cameras/Camera3D" instance=ExtResource("1_d48gs")]
+
+[node name="HQs" type="Node3D" parent="."]
+
+[node name="Spawners" type="Node3D" parent="."]
+
+[node name="AI" type="Node3D" parent="Spawners"]
+
+[node name="Loot" type="Node3D" parent="Spawners"]
+
+[node name="Vehicles" type="Node3D" parent="Spawners"]
+
+[node name="Emplacements" type="Node3D" parent="Spawners"]
+
+[editable path="Walls/Doors/Door_"]
