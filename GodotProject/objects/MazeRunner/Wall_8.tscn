@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsh62dng3mud5"]
 
-[ext_resource type="Script" uid="uid://d3v6jwiiqqv1w" path="res://scripts/MazeRunner/static_makeLocal.gd" id="1_cntwb"]
-[ext_resource type="PackedScene" uid="uid://cw2wurqh0m8gi" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_yqqn0"]
+[ext_resource type="Script" uid="uid://c3au160r2c8gp" path="res://scripts/MazeRunner/Door.gd" id="1_cntwb"]
+[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_yqqn0"]
 
 [node name="Wall_x8" type="Node3D"]
 script = ExtResource("1_cntwb")

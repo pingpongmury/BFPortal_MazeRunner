@@ -2,16 +2,27 @@
 class_name Door
 extends Node3D
 
+# Metadata key for per-node localization tracking
+const META_LOCALIZED := "_children_localized"
 func _enter_tree() -> void:
-	if get_node(".") == get_tree().edited_scene_root:	# If the node running this cript IS the scene root:
-		return											# 	Don't do anything after this
-	make_local(self)
+	if not Engine.is_editor_hint():
+		return
 
-var is_local = false
-func make_local(node: Node) -> void:
-	if(!is_local):										# If this node is already owned by the SceneTree root Node:
-		node.owner = get_tree().edited_scene_root		# 	Make this node owned by the SceneTree root Node
-		is_local = true									#	and keep track of when you have
+	var scene_root := get_tree().edited_scene_root
+	if scene_root == null or self == scene_root:
+		return
 
-func on_enter_tree() -> void:
-	return
+
+		
+	if get_meta("_children_localized", false):
+		return
+
+	for child in get_children():
+		if child.owner != scene_root:
+			child.owner = scene_root
+			
+	scene_file_path = ""
+	if self.owner != scene_root:
+		self.owner = scene_root
+
+	set_meta("_children_localized", true)

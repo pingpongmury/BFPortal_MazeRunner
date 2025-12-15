@@ -1,7 +1,7 @@
 @tool
 #class_name FoundationPlanter_Long_01
 class_name DoorComponent
-extends Node3D
+extends Door
 
 
 @export var ObjId: int = -1
@@ -38,7 +38,8 @@ func _validate_property(property: Dictionary):
 #------------------------------------------------------------------------
 @export var color: Color = Color.WEB_GRAY:
 	set(value):
-		update_material_color(value)
+		color = value
+		update_material_color()
 
 @export var is_movable: bool = false:
 	set(value):
@@ -57,7 +58,7 @@ const PHASE_COLORS := [
 	Color.DARK_GREEN,
 	Color.DARK_GOLDENROD
 ]
-var phase: int = 1:
+var phase: int = 0:
 	set(value):
 		if phase >= 0 and phase < PHASES.size():
 			if is_in_group("phase_%s" % PHASES[phase]):
@@ -72,7 +73,7 @@ var phase: int = 1:
 
 
 const HEIGHTS := ["Full", "Half"]
-var height: int = 0:
+var height: int = 1:
 	set(value):
 		height = value
 		calc_name()
@@ -142,11 +143,13 @@ func _get_property_list() -> Array:
 var mesh: MeshInstance3D
 var mat: Material
 
-
 #------------------------------------------------------------------------
 #---------------------------- Door Overrides ----------------------------
 #------------------------------------------------------------------------
 func _enter_tree() -> void:
+	if not Engine.is_editor_hint():
+		return
+	
 	add_to_group(StringName("all-doors"), false)
 	return
 
@@ -160,6 +163,7 @@ func _exit_tree() -> void:
 func _ready() -> void:
 	setup_mesh()
 	update_color_from_phase()
+	update_material_color()
 
 
 #------------------------------------------------------------------------
@@ -200,7 +204,7 @@ func enum_to_hint_string(arr: Array) -> String:
 			parts.append("%s:%d" % [arr[i], i])
 	return ",".join(parts)
 
-
+var is_mesh_setup: bool = false
 func setup_mesh() -> void:
 	# Find the MeshInstance3D
 	mesh = $Mesh/Mesh
@@ -214,11 +218,15 @@ func setup_mesh() -> void:
 	if mat != null:
 		mat = mat.duplicate()
 		mesh.set_surface_override_material(0, mat)
+	is_mesh_setup = true
+	#print("mesh setup")
 
 
-func update_material_color(value: Color) -> void:
+func update_material_color() -> void:
+	if !is_mesh_setup:
+		setup_mesh()
 	if mat != null:
-		mat.albedo_color = value
+		mat.albedo_color = color
 
 
 func update_color_from_phase() -> void:
@@ -226,3 +234,4 @@ func update_color_from_phase() -> void:
 		color = PHASE_COLORS[phase]
 	else:
 		color = Color.WEB_GRAY
+	update_material_color()

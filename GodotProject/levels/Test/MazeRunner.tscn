@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://6icsgd2mitm4"]
+[gd_scene load_steps=18 format=3 uid="uid://6icsgd2mitm4"]
 
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/HQ_PlayerSpawner.tscn" id="1_7wlmn"]
 [ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_5i13d"]
@@ -7,29 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://bm3m36aayfuox" path="res://objects/Global/Generic/Common/Architecture/HighwayOverpass_Foundation_01.tscn" id="5_cj53t"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="5_ecjhw"]
 [ext_resource type="Shader" uid="uid://dh10cwgxhihjq" path="res://scripts/MazeRunner/MazeTemplateShader.gdshader" id="5_gvlbj"]
-[ext_resource type="Texture2D" uid="uid://dtxqgorop333l" path="res://2025-12-10_21h52_58.png" id="6_2077n"]
 [ext_resource type="PackedScene" path="res://static/MP_Eastwood_Terrain.tscn" id="6_fjqxu"]
-[ext_resource type="Script" uid="uid://bxtjwmxq03x2n" path="res://scripts/MazeRunner/gen_all_phase_ids.gd" id="7_4jtn2"]
-[ext_resource type="Script" uid="uid://d3v6jwiiqqv1w" path="res://scripts/MazeRunner/static_makeLocal.gd" id="7_mk8iu"]
+[ext_resource type="Texture2D" uid="uid://c45mlnvp0g1mh" path="res://objects/MazeRunner/2025-12-10_22h56_04.png" id="6_spdj6"]
+[ext_resource type="Script" uid="uid://dmbre5yqc54dt" path="res://scripts/MazeRunner/gen_all_phase_ids.gd" id="7_4jtn2"]
 [ext_resource type="PackedScene" path="res://static/MP_Eastwood_Assets.tscn" id="7_whd0n"]
 [ext_resource type="Script" uid="uid://bb5vhtn2d4bo7" path="res://scripts/Shared/Generic/Common/Props/FoundationPlanter_Long_01.gd" id="8_gvlbj"]
-[ext_resource type="Script" uid="uid://qcetg8ieq7pa" path="res://scripts/MazeRunner/MazeWall_get_movable.gd" id="10_2077n"]
-[ext_resource type="Script" uid="uid://cehw8sobhwcgi" path="res://scripts/MazeRunner/Phase_get_movable_MazeWalls.gd" id="11_4jtn2"]
-[ext_resource type="Script" uid="uid://cbi63a1oe0kw6" path="res://scripts/MazeRunner/MazeWall_update_movable.gd" id="11_8pssg"]
-[ext_resource type="PackedScene" uid="uid://c1dvpjdioehpw" path="res://objects/MazeRunner/Wall_1.tscn" id="11_gvlbj"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/AI/AI_Spawner.tscn" id="14_spdj6"]
-[ext_resource type="Script" uid="uid://div6e8h7lglky" path="res://scripts/MazeRunner/enum_all_spawners.gd" id="15_cusug"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/VehicleSpawner.tscn" id="15_l5yay"]
-[ext_resource type="Script" uid="uid://68vf56awwcn6" path="res://scripts/MazeRunner/enum_ai.gd" id="15_spdj6"]
-[ext_resource type="Script" uid="uid://bnevnp17osmbr" path="res://scripts/MazeRunner/enum_vehicle.gd" id="17_esiox"]
-[ext_resource type="Script" uid="uid://ckj254oqkalj2" path="res://scripts/MazeRunner/enum_loot.gd" id="18_7un2b"]
-[ext_resource type="Script" uid="uid://dhks0tirky6pp" path="res://scripts/MazeRunner/enum_emplacement.gd" id="20_lm5j7"]
+[ext_resource type="PackedScene" uid="uid://cnnbdpektacs0" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="15_spdj6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2077n"]
 render_priority = 0
 shader = ExtResource("5_gvlbj")
-shader_parameter/tex = ExtResource("6_2077n")
-shader_parameter/opacity = 0.357
+shader_parameter/tex = ExtResource("6_spdj6")
+shader_parameter/opacity = 0.067
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8pssg"]
 lightmap_size_hint = Vector2i(12, 12)
@@ -73,7 +64,6 @@ script = ExtResource("7_4jtn2")
 
 [node name="Wall_x2_" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25311, 3.12457, -21.5151)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -93,7 +83,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x1_" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95465, 3.12457, -1.0609)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -105,7 +94,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x1_2" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3547, 3.12457, -1.0609)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -117,11 +105,9 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x1_3" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.9181, 3.12457, -3.62408)
-script = ExtResource("7_mk8iu")
 
 [node name="Wall_x1_4" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.9181, 3.12457, -18.947)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -133,7 +119,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_7" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7841, 3.12457, -31.7274)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -169,7 +154,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_2" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.07121, 3.12457, -1.07553)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -189,7 +173,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.7304, 3.12457, 1.47746)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -225,7 +208,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_2" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14119, 3.12457, 19.3493)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -261,7 +243,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_3" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.69419, 3.12457, 27.0085)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -281,7 +262,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_4" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.9181, 3.12457, 6.58832)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -301,7 +281,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x10" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3651, 3.12457, 9.14153)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -385,7 +364,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x6" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.70011, 3.12457, -39.3869)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -437,7 +415,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_5" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35381, 3.12457, -31.7275)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -457,7 +434,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_3" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.5182, 3.12457, 37.2209)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -493,7 +469,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_4" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3536, 3.12457, 39.7741)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -529,7 +504,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_5" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.9068, 3.12457, 21.9023)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -565,7 +539,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x7" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7784, 3.12457, 19.3493)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -617,7 +590,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x8" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.544, 3.12457, 32.1147)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -669,7 +641,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_6" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.9125, 3.12457, -39.3868)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -705,7 +676,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_6" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.3371, 3.12457, -24.0682)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -725,7 +695,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_7" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06085, 3.12457, -21.515)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -745,7 +714,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_8" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.7201, 3.12457, -39.3868)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -781,7 +749,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_9" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06085, 3.12457, -41.9398)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -817,7 +784,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_10" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1469, 3.12457, -52.1523)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -853,7 +819,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x9" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5717, 3.12457, -52.1523)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -905,7 +870,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_11" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.3371, 3.12457, -54.7055)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -941,7 +905,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x11" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9965, 3.12457, -72.5771)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1009,7 +972,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_12" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.1249, 3.12457, -90.4489)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_12"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1045,7 +1007,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_8" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7841, 3.12457, -93.0019)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1065,7 +1026,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x12" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.3373, 3.12457, -100.661)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x12"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1117,7 +1077,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_13" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.2089, 3.12457, -82.7895)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1153,7 +1112,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_14" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.2089, 3.12457, -113.427)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1189,7 +1147,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x13" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.7621, 3.12457, -121.086)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1241,7 +1198,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_9" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.2089, 3.12457, -133.852)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1261,7 +1217,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_10" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4213, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1281,7 +1236,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x14" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.9745, 3.12457, -121.086)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1349,7 +1303,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_11" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6337, 3.12457, -113.427)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1369,7 +1322,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_15" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.8461, 3.12457, -133.852)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_15"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1405,7 +1357,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_12" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 76.1869, 3.12457, -141.511)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_12"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1425,7 +1376,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_16" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4213, 3.12457, -144.064)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_16"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1461,7 +1411,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x15" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.5497, 3.12457, -161.936)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x15"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1513,7 +1462,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_17" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4213, 3.12457, -174.701)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_17"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1549,7 +1497,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_13" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 65.9743, 3.12457, -167.042)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1569,7 +1516,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_18" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.8461, 3.12457, -164.489)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_18"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1605,7 +1551,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_14" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.7621, 3.12457, -182.361)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1625,7 +1570,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_15" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9965, 3.12457, -154.276)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_15"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1645,7 +1589,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_19" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.9745, 3.12457, -90.4489)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_19"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1681,7 +1624,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x16" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4213, 3.12457, -93.0019)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x16"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1733,7 +1675,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_16" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.5497, 3.12457, -100.661)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_16"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1753,7 +1694,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_17" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 76.1869, 3.12457, -100.661)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_17"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1773,7 +1713,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x17" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0585, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x17"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1825,7 +1764,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x18" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 106.824, 3.12457, -110.874)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x18"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1909,7 +1847,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_18" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.483, 3.12457, -133.852)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_18"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1929,7 +1866,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_19" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.271, 3.12457, -144.064)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_19"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -1949,7 +1885,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x19" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 96.6117, 3.12457, -161.936)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x19"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2033,7 +1968,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x20" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6337, 3.12457, -154.276)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x20"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2101,7 +2035,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_20" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.7621, 3.12457, -161.936)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_20"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2121,7 +2054,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_21" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.271, 3.12457, -174.701)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_21"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2141,7 +2073,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_20" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 106.824, 3.12457, -156.83)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_20"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2177,7 +2108,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_22" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.483, 3.12457, -164.489)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_22"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2197,7 +2127,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_23" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.271, 3.12457, -113.427)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_23"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2217,7 +2146,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_24" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 86.3993, 3.12457, -151.723)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_24"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2237,7 +2165,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_21" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 86.3993, 3.12457, -121.086)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_21"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2273,7 +2200,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_22" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0585, 3.12457, -123.639)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_22"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2309,7 +2235,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_25" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 96.6117, 3.12457, -131.298)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_25"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2329,7 +2254,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_26" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.1247, 3.12457, -44.4931)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_26"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2349,7 +2273,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x21" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.7001, 3.12457, -70.0241)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x21"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2401,7 +2324,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_27" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1469, 3.12457, -82.7895)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_27"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2421,7 +2343,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x22" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2779, 3.12457, -72.5771)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x22"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2489,7 +2410,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_28" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.7247, 3.12457, -80.2365)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_28"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2509,7 +2429,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_23" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0585, 3.12457, -174.701)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_23"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2545,7 +2464,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_29" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 76.1869, 3.12457, -182.361)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_29"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2565,7 +2483,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_24" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.8461, 3.12457, -184.914)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_24"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2601,7 +2518,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_30" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.9745, 3.12457, -192.573)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_30"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2621,7 +2537,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_25" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4213, 3.12457, -195.126)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_25"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2657,7 +2572,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x23" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0585, 3.12457, -195.126)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x23"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2725,7 +2639,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_31" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 106.824, 3.12457, -202.785)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_31"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2745,7 +2658,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_32" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.271, 3.12457, -205.338)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_32"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2765,7 +2677,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_26" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 86.3993, 3.12457, -212.998)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_26"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2801,7 +2712,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_27" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 86.3993, 3.12457, -233.423)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_27"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2837,7 +2747,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_28" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 86.3993, 3.12457, -253.847)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_28"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2873,7 +2782,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_29" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.8461, 3.12457, -215.551)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_29"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2909,7 +2817,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_33" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.9745, 3.12457, -223.21)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_33"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2929,7 +2836,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_34" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6337, 3.12457, -225.763)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_34"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2949,7 +2855,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_35" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0585, 3.12457, -235.976)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_35"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2969,7 +2874,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_36" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 96.6115, 3.12457, -228.316)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_36"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -2989,7 +2893,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_37" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0585, 3.12457, -256.4)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_37"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3009,7 +2912,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x24" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6337, 3.12457, -235.975)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x24"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3061,7 +2963,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x25" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.7621, 3.12457, -223.21)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x25"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3113,7 +3014,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x26" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4213, 3.12457, -205.338)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x26"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3165,7 +3065,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x27" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9965, 3.12457, -235.975)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x27"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3217,7 +3116,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x28" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.1249, 3.12457, -243.635)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x28"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3269,7 +3167,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_38" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5717, 3.12457, -225.763)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_38"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3289,7 +3186,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_39" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5717, 3.12457, -235.975)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_39"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3309,7 +3205,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x29" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7841, 3.12457, -256.4)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x29"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3393,7 +3288,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_40" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 65.9743, 3.12457, -248.741)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_40"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3413,7 +3307,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x30" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.2089, 3.12457, -246.188)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x30"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3481,7 +3374,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x31" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.271, 3.12457, -215.551)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x31"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3533,7 +3425,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x32" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 117.036, 3.12457, -223.21)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x32"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3601,7 +3492,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_30" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.908, 3.12457, -246.188)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_30"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3637,7 +3527,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x33" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.908, 3.12457, -235.976)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x33"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3705,7 +3594,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x34" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 157.886, 3.12457, -243.635)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x34"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3757,7 +3645,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_31" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 147.674, 3.12457, -253.847)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_31"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3793,7 +3680,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x35" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.908, 3.12457, -256.4)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x35"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3845,7 +3731,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_41" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.545, 3.12457, -256.4)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_41"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3865,7 +3750,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x36" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.758, 3.12457, -246.188)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x36"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3917,7 +3801,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_42" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 178.311, 3.12457, -243.635)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_42"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3937,7 +3820,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_32" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 188.523, 3.12457, -228.316)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_32"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -3973,7 +3855,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_33" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.395, 3.12457, -235.976)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_33"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4009,7 +3890,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_34" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 208.948, 3.12457, -218.104)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_34"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4045,7 +3925,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_35" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185.97, 3.12457, -225.763)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_35"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4081,7 +3960,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_36" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 168.098, 3.12457, -233.423)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_36"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4117,7 +3995,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_37" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.545, 3.12457, -215.551)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_37"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4153,7 +4030,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_43" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 147.674, 3.12457, -212.998)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_43"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4173,7 +4049,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_38" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.12, 3.12457, -205.338)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_38"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4209,7 +4084,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x37" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 127.249, 3.12457, -202.785)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x37"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4277,7 +4151,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_39" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.12, 3.12457, -225.763)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_39"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4313,7 +4186,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_44" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 137.461, 3.12457, -223.21)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_44"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4333,7 +4205,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_40" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.696, 3.12457, -184.914)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_40"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4369,7 +4240,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_45" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 117.036, 3.12457, -182.361)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_45"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4389,7 +4259,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x38" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.908, 3.12457, -174.701)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x38"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4441,7 +4310,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_46" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 127.249, 3.12457, -172.148)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_46"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4461,7 +4329,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_41" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 147.674, 3.12457, -192.573)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_41"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4497,7 +4364,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_47" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.12, 3.12457, -195.126)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_47"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4517,7 +4383,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_48" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 137.461, 3.12457, -192.573)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_48"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4537,7 +4402,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x39" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.82, 3.12457, -215.551)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x39"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4605,7 +4469,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_49" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 239.585, 3.12457, -207.892)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_49"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4625,7 +4488,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x40" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 249.797, 3.12457, -197.679)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x40"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4677,7 +4539,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_42" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 247.244, 3.12457, -195.126)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_42"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4713,7 +4574,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_50" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 229.373, 3.12457, -197.679)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_50"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4733,7 +4593,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x41" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 216.607, 3.12457, -205.338)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x41"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4785,7 +4644,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_43" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 198.736, 3.12457, -223.21)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_43"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4821,7 +4679,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_44" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.182, 3.12457, -215.551)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_44"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4857,7 +4714,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_45" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 198.735, 3.12457, -187.467)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_45"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4893,7 +4749,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_51" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.182, 3.12457, -184.914)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_51"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4913,7 +4768,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_46" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 188.523, 3.12457, -167.042)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_46"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4949,7 +4803,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_47" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.182, 3.12457, -164.489)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_47"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -4985,7 +4838,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_48" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 178.311, 3.12457, -161.936)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_48"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5021,7 +4873,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_52" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.758, 3.12457, -144.064)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_52"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5041,7 +4892,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x42" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.758, 3.12457, -174.701)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x42"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5093,7 +4943,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_53" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 168.098, 3.12457, -182.361)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_53"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5113,7 +4962,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x43" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 157.886, 3.12457, -192.573)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x43"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5165,7 +5013,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_49" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.758, 3.12457, -205.338)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_49"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5201,7 +5048,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x44" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.758, 3.12457, -195.126)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x44"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5253,7 +5099,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_54" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 188.523, 3.12457, -202.785)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_54"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5273,7 +5118,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_55" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 178.311, 3.12457, -187.467)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_55"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5293,7 +5137,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x45" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 239.585, 3.12457, -233.423)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x45"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5345,7 +5188,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x46" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.82, 3.12457, -246.188)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x46"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5397,7 +5239,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_56" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 208.948, 3.12457, -253.847)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_56"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5417,7 +5258,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_57" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 219.16, 3.12457, -253.847)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_57"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5437,7 +5277,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_50" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 219.16, 3.12457, -243.635)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_50"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5473,7 +5312,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_58" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.82, 3.12457, -225.763)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_58"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5493,7 +5331,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_59" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 237.032, 3.12457, -235.976)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_59"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5513,7 +5350,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_51" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 168.098, 3.12457, -172.148)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_51"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5549,7 +5385,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_60" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.545, 3.12457, -154.276)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_60"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5569,7 +5404,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_52" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 157.886, 3.12457, -151.723)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_52"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5605,7 +5439,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_61" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.545, 3.12457, -133.852)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_61"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5625,7 +5458,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x47" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.9745, 3.12457, -59.8117)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x47"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5677,7 +5509,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_62" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4213, 3.12457, -41.9399)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_62"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5697,7 +5528,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_53" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.8461, 3.12457, -62.3647)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_53"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5733,7 +5563,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x48" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.8461, 3.12457, -72.5771)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x48"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5785,7 +5614,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_54" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 96.6117, 3.12457, -70.0241)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_54"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5821,7 +5649,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_55" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.0585, 3.12457, -52.1523)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_55"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5857,7 +5684,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_56" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 76.1869, 3.12457, -49.5993)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_56"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5893,7 +5719,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x49" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4213, 3.12457, -31.7275)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x49"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5945,7 +5770,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x50" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.5497, 3.12457, -49.5993)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x50"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -5997,7 +5821,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_63" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.2089, 3.12457, -62.3647)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_63"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6017,7 +5840,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_64" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.7621, 3.12457, -59.8117)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_64"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6037,7 +5859,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_65" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9965, 3.12457, -41.9399)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_65"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6057,7 +5878,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_57" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.9327, 3.12457, -44.493)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_57"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6093,7 +5913,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_58" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06086, 3.12457, -62.3646)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_58"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6129,7 +5948,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_59" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4857, 3.12457, -62.3646)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_59"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6165,7 +5983,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_66" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.3573, 3.12457, -70.024)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_66"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6185,7 +6002,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x51" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.9105, 3.12457, -41.9398)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x51"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6253,7 +6069,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_60" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.3353, 3.12457, -41.9398)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_60"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6289,7 +6104,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_67" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -66.7821, 3.12457, -49.5992)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_67"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6309,7 +6123,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x52" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.5477, 3.12457, -52.1522)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x52"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6361,7 +6174,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_61" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -97.4193, 3.12457, -49.5992)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_61"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6397,7 +6209,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_62" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -87.2069, 3.12457, -39.3868)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_62"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6433,7 +6244,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_63" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.7601, 3.12457, -21.515)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_63"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6469,7 +6279,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_64" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9725, 3.12457, -31.7274)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_64"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6505,7 +6314,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x53" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -117.844, 3.12457, -39.3868)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x53"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6557,7 +6365,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_68" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.397, 3.12457, -41.9398)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_68"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6577,7 +6384,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_65" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.397, 3.12457, -21.515)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_65"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6613,7 +6419,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x54" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -138.269, 3.12457, -34.2806)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x54"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6665,7 +6470,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_69" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.61, 3.12457, -31.7274)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_69"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6685,7 +6489,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_66" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.822, 3.12457, -31.7274)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_66"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6721,7 +6524,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_70" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -158.694, 3.12457, -29.1744)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_70"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6741,7 +6543,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_71" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.247, 3.12457, -21.515)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_71"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6761,7 +6562,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_72" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.61, 3.12457, -52.1522)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_72"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6781,7 +6581,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_67" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.822, 3.12457, -52.1522)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_67"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6817,7 +6616,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_73" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -148.481, 3.12457, -54.7054)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_73"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6837,7 +6635,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_74" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -128.057, 3.12457, -54.7054)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_74"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6857,7 +6654,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_75" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.034, 3.12457, -62.3646)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_75"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6877,7 +6673,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_76" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -158.694, 3.12457, -70.024)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_76"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6897,7 +6692,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_77" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.247, 3.12457, -72.577)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_77"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6917,7 +6711,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_78" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -168.906, 3.12457, -80.2364)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_78"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6937,7 +6730,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x55" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.185, 3.12457, -62.3646)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x55"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -6989,7 +6781,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_68" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -107.632, 3.12457, -59.8116)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_68"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7025,7 +6816,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_69" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -97.4195, 3.12457, -64.9178)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_69"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7061,7 +6851,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_79" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9725, 3.12457, -82.7894)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_79"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7081,7 +6870,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x56" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -97.4193, 3.12457, 1.4628)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x56"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7149,7 +6937,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_80" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.7601, 3.12457, -1.09019)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_80"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7169,7 +6956,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x57" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9725, 3.12457, 19.3346)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x57"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7221,7 +7007,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_81" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -117.844, 3.12457, 11.6752)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_81"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7241,7 +7026,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x58" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.822, 3.12457, 9.12221)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x58"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7309,7 +7093,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_70" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -128.056, 3.12457, -8.7496)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_70"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7345,7 +7128,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x59" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.61, 3.12457, -11.3026)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x59"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7413,7 +7195,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_71" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -107.632, 3.12457, -8.7496)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_71"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7449,7 +7230,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_82" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.185, 3.12457, -1.09019)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_82"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7469,7 +7249,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_83" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -138.269, 3.12457, -8.7496)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_83"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7489,7 +7268,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_84" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -148.481, 3.12457, -13.8558)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_84"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7509,7 +7287,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_85" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -158.694, 3.12457, 6.569)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_85"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7529,7 +7306,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x60" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -158.694, 3.12457, 32.1)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x60"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7597,7 +7373,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x61" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.459, 3.12457, -1.09019)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x61"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7665,7 +7440,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_86" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -168.906, 3.12457, -3.6434)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_86"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7685,7 +7459,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_87" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.247, 3.12457, -11.3026)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_87"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7705,7 +7478,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_72" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -189.331, 3.12457, 1.4628)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_72"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7741,7 +7513,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_73" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -189.331, 3.12457, -3.6434)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_73"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7777,7 +7548,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_74" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.672, 3.12457, -21.515)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_74"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7813,7 +7583,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x62" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -179.118, 3.12457, -29.1744)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x62"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7881,7 +7650,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_88" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.459, 3.12457, -31.7274)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_88"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7901,7 +7669,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_89" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.672, 3.12457, -52.1522)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_89"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7921,7 +7688,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_90" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -189.331, 3.12457, -54.7054)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_90"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7941,7 +7707,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_75" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.672, 3.12457, -41.9398)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_75"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7977,7 +7742,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_91" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -199.544, 3.12457, -44.493)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_91"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -7997,7 +7761,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_76" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -202.096, 3.12457, -52.1522)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_76"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8033,7 +7796,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_92" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -219.968, 3.12457, -49.5992)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_92"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8053,7 +7815,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_77" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -209.756, 3.12457, -54.7054)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_77"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8089,7 +7850,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x63" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -202.096, 3.12457, -72.577)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x63"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8157,7 +7917,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_93" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -199.543, 3.12457, -70.024)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_93"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8177,7 +7936,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_94" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -179.118, 3.12457, -70.024)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_94"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8197,7 +7955,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_95" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.459, 3.12457, -62.3646)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_95"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8217,7 +7974,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_78" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -168.906, 3.12457, -44.493)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_78"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8253,7 +8009,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_79" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.034, 3.12457, -41.9398)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_79"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8289,7 +8044,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_96" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -199.544, 3.12457, -75.1302)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_96"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8309,7 +8063,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_80" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.672, 3.12457, -82.7894)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_80"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8345,7 +8098,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_81" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -179.119, 3.12457, -85.3426)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_81"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8381,7 +8133,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_97" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.459, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_97"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8401,7 +8152,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_98" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -168.906, 3.12457, -105.767)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_98"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8421,7 +8171,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_99" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.247, 3.12457, -113.427)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_99"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8441,7 +8190,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x64" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -202.096, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x64"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8509,7 +8257,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_82" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -209.756, 3.12457, -105.767)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_82"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8545,7 +8292,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_83" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -191.884, 3.12457, -123.639)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_83"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8581,7 +8327,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_84" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -189.331, 3.12457, -126.192)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_84"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8617,7 +8362,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_85" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.672, 3.12457, -144.064)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_85"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8653,7 +8397,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_100" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -199.543, 3.12457, -151.723)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_100"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8673,7 +8416,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x65" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -179.118, 3.12457, -131.298)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x65"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8725,7 +8467,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_86" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.672, 3.12457, -113.427)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_86"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8761,7 +8502,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x66" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.247, 3.12457, -123.639)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x66"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8829,7 +8569,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_87" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -148.481, 3.12457, -121.086)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_87"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8865,7 +8604,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_101" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.034, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_101"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8885,7 +8623,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_88" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -158.694, 3.12457, -85.3426)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_88"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8921,7 +8658,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_102" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.247, 3.12457, -93.0018)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_102"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8941,7 +8677,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_103" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.034, 3.12457, -82.7894)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_103"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8961,7 +8696,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_104" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -148.481, 3.12457, -75.1302)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_104"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -8981,7 +8715,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x67" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.61, 3.12457, -72.577)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x67"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9049,7 +8782,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_105" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -138.269, 3.12457, -64.9178)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_105"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9069,7 +8801,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_89" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -148.481, 3.12457, -126.192)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_89"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9105,7 +8836,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x68" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.822, 3.12457, -144.064)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x68"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9173,7 +8903,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_106" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -138.269, 3.12457, -141.511)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_106"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9193,7 +8922,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_90" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -117.844, 3.12457, -146.617)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_90"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9229,7 +8957,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_107" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.185, 3.12457, -154.276)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_107"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9249,7 +8976,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x69" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -107.632, 3.12457, -136.405)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x69"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9317,7 +9043,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_108" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.185, 3.12457, -133.851)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_108"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9337,7 +9062,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_109" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9725, 3.12457, -133.851)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_109"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9357,7 +9081,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_91" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9725, 3.12457, -113.427)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_91"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9393,7 +9116,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_110" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -117.844, 3.12457, -105.767)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_110"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9413,7 +9135,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_92" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.397, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_92"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9449,7 +9170,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x70" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -138.269, 3.12457, -100.661)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x70"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9501,7 +9221,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_111" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.61, 3.12457, -113.427)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_111"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9521,7 +9240,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_93" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -128.057, 3.12457, -115.98)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_93"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9557,7 +9275,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_112" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.397, 3.12457, -123.639)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_112"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9577,7 +9294,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_113" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.822, 3.12457, -93.0018)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_113"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9597,7 +9313,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_114" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.61, 3.12457, -82.7894)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_114"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9617,7 +9332,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_115" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -97.4195, 3.12457, -105.767)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_115"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9637,7 +9351,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x71" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.7601, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x71"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9705,7 +9418,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_116" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -107.632, 3.12457, -95.555)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_116"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9725,7 +9437,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_94" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.185, 3.12457, -93.0018)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_94"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9761,7 +9472,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_117" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -117.844, 3.12457, -85.3426)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_117"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9781,7 +9491,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_118" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -76.9947, 3.12457, -105.767)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_118"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9801,7 +9510,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_95" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -87.2071, 3.12457, -85.3426)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_95"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9837,7 +9545,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_119" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.5477, 3.12457, -82.7894)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_119"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9857,7 +9564,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_120" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.7601, 3.12457, -93.0018)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_120"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9877,7 +9583,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_96" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -76.9947, 3.12457, -64.9178)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_96"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9913,7 +9618,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x72" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.6981, 3.12457, -82.7894)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x72"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -9965,7 +9669,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x73" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2733, 3.12457, -93.0018)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x73"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10017,7 +9720,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_97" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3639, 3.12457, -93.0018)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_97"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10053,7 +9755,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x74" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.9169, 3.12457, -75.1302)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x74"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10105,7 +9806,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_121" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5763, 3.12457, -62.3646)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_121"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10125,7 +9825,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_98" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.9171, 3.12457, -110.874)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_98"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10161,7 +9860,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_122" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5763, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_122"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10181,7 +9879,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x75" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.50787, 3.12457, -105.767)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x75"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10233,7 +9930,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_123" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06086, 3.12457, -113.427)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_123"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10253,7 +9949,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_99" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06087, 3.12457, -123.639)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_99"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10289,7 +9984,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_100" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.9327, 3.12457, -105.767)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_100"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10325,7 +10019,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_124" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2733, 3.12457, -103.214)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_124"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10345,7 +10038,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x76" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.3573, 3.12457, -100.661)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x76"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10413,7 +10105,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_101" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.6981, 3.12457, -123.639)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_101"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10449,7 +10140,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_125" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.1449, 3.12457, -131.298)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_125"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10469,7 +10159,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_102" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2733, 3.12457, -133.851)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_102"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10505,7 +10194,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_103" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15153, 3.12457, -133.851)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_103"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10541,7 +10229,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_104" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5763, 3.12457, -133.851)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_104"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10577,7 +10264,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x77" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.1295, 3.12457, -151.723)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x77"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10629,7 +10315,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_126" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7887, 3.12457, -144.064)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_126"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10649,7 +10334,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_105" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.3417, 3.12457, -126.192)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_105"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10685,7 +10369,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x78" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5763, 3.12457, -123.639)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x78"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10753,7 +10436,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_127" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.1293, 3.12457, -115.98)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_127"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10773,7 +10455,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_106" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.70452, 3.12457, -105.767)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_106"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10809,7 +10490,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x79" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.3353, 3.12457, -62.3646)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x79"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10861,7 +10541,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_128" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -87.2068, 3.12457, -70.024)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_128"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10881,7 +10560,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x80" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -56.5697, 3.12457, -70.024)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x80"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10933,7 +10611,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_107" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.6981, 3.12457, -52.1522)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_107"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10969,7 +10646,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x2_129" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.9325, 3.12457, -90.4488)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_129"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -10989,7 +10665,6 @@ script = ExtResource("8_gvlbj")
 
 [node name="Wall_x4_108" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.1449, 3.12457, -110.874)
-script = ExtResource("7_mk8iu")
 
 [node name="FoundationPlanter_Long_01" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static/Wall_x4_108"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
@@ -11024,18 +10699,11 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.31
 script = ExtResource("8_gvlbj")
 
 [node name="Phase_A" type="Node3D" parent="MazeGame/MazeWalls"]
-script = ExtResource("11_4jtn2")
-ObjId = 1000000
-_wall_ids = [1002011, 1002012, 1003011, 1003012]
 
 [node name="Slide_L_Full" type="Node3D" parent="MazeGame/MazeWalls/Phase_A"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5181, 0.0150757, -13.8409)
-script = ExtResource("10_2077n")
 
 [node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full"]
-script = ExtResource("11_8pssg")
-ObjId = 1
-height = 0
 
 [node name="Mov_Mid_Slider_Full_Arch_L1_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.106, 0, 0)
@@ -11046,12 +10714,6 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.106,
 script = ExtResource("8_gvlbj")
 
 [node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full"]
-script = ExtResource("11_8pssg")
-ObjId = 1002010
-movable = true
-height = 0
-movement_type = 0
-direction = 2
 
 [node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_L_Full/Dynamic"]
 transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
@@ -11065,12 +10727,8 @@ ObjId = 1002012
 
 [node name="Slide_R_Full" type="Node3D" parent="MazeGame/MazeWalls/Phase_A"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5181, 0.0150757, -8.73474)
-script = ExtResource("10_2077n")
 
 [node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full"]
-script = ExtResource("11_8pssg")
-ObjId = 1
-height = 0
 
 [node name="Mov_Mid_Slider_Full_Arch_R1_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.106, 0, 0)
@@ -11081,12 +10739,6 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.106
 script = ExtResource("8_gvlbj")
 
 [node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full"]
-script = ExtResource("11_8pssg")
-ObjId = 1003010
-movable = true
-height = 0
-movement_type = 0
-direction = 3
 
 [node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_A/Slide_R_Full/Dynamic"]
 transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
@@ -11099,25 +10751,13 @@ script = ExtResource("8_gvlbj")
 ObjId = 1003012
 
 [node name="Phase_B" type="Node3D" parent="MazeGame/MazeWalls"]
-script = ExtResource("11_4jtn2")
-ObjId = 2000000
-_wall_ids = [2010011, 2010012, 2010021, 2010022]
 
 [node name="Rotate_CW_Full" type="Node3D" parent="MazeGame/MazeWalls/Phase_B"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14691, 0.0126953, -1.0609)
-script = ExtResource("10_2077n")
 
 [node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full"]
-script = ExtResource("11_8pssg")
-height = 0
 
 [node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full"]
-script = ExtResource("11_8pssg")
-ObjId = 2010010
-movable = true
-height = 0
-movement_type = 1
-direction = 0
 
 [node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full/Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
@@ -11131,19 +10771,10 @@ ObjId = 2010012
 
 [node name="Rotate_CW_Full2" type="Node3D" parent="MazeGame/MazeWalls/Phase_B"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25311, 0.0126953, -1.0609)
-script = ExtResource("10_2077n")
 
 [node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2"]
-script = ExtResource("11_8pssg")
-height = 0
 
 [node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2"]
-script = ExtResource("11_8pssg")
-ObjId = 2010020
-movable = true
-height = 0
-movement_type = 1
-direction = 0
 
 [node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_B/Rotate_CW_Full2/Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
@@ -11156,29 +10787,17 @@ script = ExtResource("8_gvlbj")
 ObjId = 2010022
 
 [node name="Phase_C" type="Node3D" parent="MazeGame/MazeWalls"]
-script = ExtResource("11_4jtn2")
-ObjId = 3000000
-_wall_ids = [3100011, 3101011]
 
 [node name="Slide_U_Half" type="Node3D" parent="MazeGame/MazeWalls/Phase_C"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95465, 0.0126953, -21.5151)
-script = ExtResource("10_2077n")
 
 [node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half"]
-script = ExtResource("11_8pssg")
-height = 0
 
 [node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half/Static"]
 transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
 script = ExtResource("8_gvlbj")
 
 [node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half"]
-script = ExtResource("11_8pssg")
-ObjId = 3100010
-movable = true
-height = 1
-movement_type = 0
-direction = 0
 
 [node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_U_Half/Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
@@ -11187,23 +10806,14 @@ ObjId = 3100011
 
 [node name="Slide_D_Half" type="Node3D" parent="MazeGame/MazeWalls/Phase_C"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3593, 0.0126953, -21.5151)
-script = ExtResource("10_2077n")
 
 [node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half"]
-script = ExtResource("11_8pssg")
-height = 0
 
 [node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half/Static"]
 transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
 script = ExtResource("8_gvlbj")
 
 [node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half"]
-script = ExtResource("11_8pssg")
-ObjId = 3101010
-movable = true
-height = 1
-movement_type = 0
-direction = 1
 
 [node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_C/Slide_D_Half/Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
@@ -11211,17 +10821,11 @@ script = ExtResource("8_gvlbj")
 ObjId = 3101011
 
 [node name="Phase_D" type="Node3D" parent="MazeGame/MazeWalls"]
-script = ExtResource("11_4jtn2")
-ObjId = 4000000
-_wall_ids = [4112011, 4112021]
 
 [node name="Rotate_U_Half" type="Node3D" parent="MazeGame/MazeWalls/Phase_D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.9181, 0.0126953, -8.73029)
-script = ExtResource("10_2077n")
 
 [node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half"]
-script = ExtResource("11_8pssg")
-height = 0
 
 [node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half/Static"]
 transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
@@ -11229,12 +10833,6 @@ script = ExtResource("8_gvlbj")
 ObjId = 111011
 
 [node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half"]
-script = ExtResource("11_8pssg")
-ObjId = 4112010
-movable = true
-height = 1
-movement_type = 1
-direction = 2
 
 [node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half/Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
@@ -11243,11 +10841,8 @@ ObjId = 4112011
 
 [node name="Rotate_U_Half2" type="Node3D" parent="MazeGame/MazeWalls/Phase_D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.9181, 0.0126953, -13.8454)
-script = ExtResource("10_2077n")
 
 [node name="Static" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2"]
-script = ExtResource("11_8pssg")
-height = 0
 
 [node name="Mov_Mid_Slider_Full_Door_Top_" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2/Static"]
 transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 2.38284, 0)
@@ -11255,12 +10850,6 @@ script = ExtResource("8_gvlbj")
 ObjId = 111011
 
 [node name="Dynamic" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2"]
-script = ExtResource("11_8pssg")
-ObjId = 4112020
-movable = true
-height = 1
-movement_type = 1
-direction = 2
 
 [node name="Mov_Mid_Slider_Full_Door_Bot_" type="Node3D" parent="MazeGame/MazeWalls/Phase_D/Rotate_U_Half2/Dynamic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00238037, 0)
@@ -11324,27 +10913,18 @@ transform = Transform3D(-0.165771, 0, -0.986164, 0, 1, 0, 0.986164, 0, -0.165771
 
 [node name="Spawners" type="Node3D" parent="MazeGame"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3362, 1.8331, 300.913)
-script = ExtResource("15_cusug")
 
 [node name="AI" type="Node3D" parent="MazeGame/Spawners"]
-script = ExtResource("15_spdj6")
-ObjId = 10
 
 [node name="AI_Spawner" parent="MazeGame/Spawners/AI" instance=ExtResource("14_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8019, -1.88348, -318.661)
 ObjId = 11
 
 [node name="Loot" type="Node3D" parent="MazeGame/Spawners"]
-script = ExtResource("18_7un2b")
-ObjId = 100
 
 [node name="Vehicle" type="Node3D" parent="MazeGame/Spawners"]
-script = ExtResource("17_esiox")
-ObjId = 200
 
 [node name="Emplacement" type="Node3D" parent="MazeGame/Spawners"]
-script = ExtResource("20_lm5j7")
-ObjId = 300
 
 [node name="ConstructionNode" type="Node3D" parent="."]
 
@@ -11354,7 +10934,5 @@ ObjId = 777
 VehicleType = 7
 P_AutoSpawnEnabled = true
 
-[node name="Wall_x1_" parent="." instance=ExtResource("11_gvlbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2069, 299.794, 153.862)
-
-[editable path="Wall_x1_"]
+[node name="FoundationPlanter_Long_01" parent="." instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.587, 296.621, 140.38)

@@ -1,72 +1,61 @@
-[gd_scene load_steps=10 format=3 uid="uid://52gr81rh6hia"]
+[gd_scene load_steps=8 format=3 uid="uid://cx1cgei2chlhj"]
 
-[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/CombatArea.tscn" id="1_8rb0h"]
-[ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_gwe58"]
-[ext_resource type="PackedScene" path="res://static/MP_Dumbo_Terrain.tscn" id="3_d103u"]
-[ext_resource type="PackedScene" path="res://static/MP_Dumbo_Assets.tscn" id="4_yrnxy"]
-[ext_resource type="Script" uid="uid://ba0dfkrmwceom" path="res://scripts/MazeRunner_CLEAN/MazeGame.gd" id="5_q741c"]
-[ext_resource type="PackedScene" uid="uid://cnnbdpektacs0" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="6_5rsrc"]
-[ext_resource type="Script" uid="uid://diuxah55r86d2" path="res://scripts/MazeRunner_CLEAN/Doors.gd" id="7_m0wyx"]
-[ext_resource type="PackedScene" uid="uid://8l4u83iakwpa" path="res://objects/MazeRunner_CLEAN/DoorExample_.tscn" id="8_44qyb"]
-[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="9_laa0v"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="1_d48gs"]
+[ext_resource type="PackedScene" uid="uid://c1dvpjdioehpw" path="res://objects/MazeRunner/Wall_1.tscn" id="2_p84r2"]
+[ext_resource type="PackedScene" uid="uid://b1cg3i4b2510y" path="res://objects/MazeRunner/Wall_2.tscn" id="3_x114x"]
+[ext_resource type="PackedScene" uid="uid://daflghwpqpjnd" path="res://objects/MazeRunner/Wall_4.tscn" id="4_hfm25"]
+[ext_resource type="PackedScene" uid="uid://civi4y0awvwb3" path="res://objects/MazeRunner/Wall_6.tscn" id="5_ipos8"]
+[ext_resource type="PackedScene" uid="uid://bsh62dng3mud5" path="res://objects/MazeRunner/Wall_8.tscn" id="6_5lai8"]
+[ext_resource type="PackedScene" uid="uid://bo6ty8sujcwsl" path="res://objects/MazeRunner/Wall_10.tscn" id="7_6t10g"]
 
-[node name="MP_Dumbo" type="Node3D"]
+[node name="MazeGame" type="Node3D"]
 
-[node name="CombatArea" parent="." node_paths=PackedStringArray("CombatVolume") instance=ExtResource("1_8rb0h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.236, 0, -325.59)
-CombatVolume = NodePath("CombatVolume")
+[node name="Maze Template" type="MeshInstance3D" parent="."]
 
-[node name="CombatVolume" parent="CombatArea" instance=ExtResource("2_gwe58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.825, 84.381, -105.306)
-points = PackedVector2Array(-430.03, -303.337, -431.654, -94.1071, -373.302, 10.7461, -320.911, 11.2383, -320.682, 31.269, -279.723, 31.2129, -279.235, 68.0914, -279.214, 85.035, -269.253, 85.6526, -269.12, 106, -252.462, 105.916, -252.462, 145.29, -185.408, 145.542, -187.047, 203.566, -122.399, 203.821, -122.399, 214.794, -113.212, 214.709, -112.869, 246.13, -99.7542, 246.967, -100.296, 266.736, 52.5826, 293.661, 54.2508, 288.166, 98.7046, 288.558, 99.1747, 302.932, 144.517, 302.513, 145.494, 281.586, 169.909, 281.028, 170.746, 314.93, 198.509, 314.232, 198.374, 265.094, 199.007, 165.871, 180.149, 166.397, 180.525, 146.964, 198.627, 147.006, 200.008, 87.8416, 128.122, 88.8421, 127.723, 31.0176, 96.0054, 4.9061, 70.2934, 4.51428, 70.1091, -42.4186, 22.5055, -42.1853, 22.7389, -61.0867, 23.4389, -105.89, 24.4161, -303.585)
-height = 100.0
+[node name="Floor" type="Node3D" parent="."]
 
-[node name="Static" type="Node3D" parent="."]
-visible = false
+[node name="Walls" type="Node3D" parent="."]
 
-[node name="MP_Dumbo_Terrain" parent="Static" instance=ExtResource("3_d103u")]
-metadata/_edit_lock_ = true
+[node name="Cameras" type="Node3D" parent="."]
 
-[node name="MP_Dumbo_Assets" parent="Static" instance=ExtResource("4_yrnxy")]
-metadata/_edit_lock_ = true
-
-[node name="MazeGame" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214.867, 0, -769.781)
-script = ExtResource("5_q741c")
-
-[node name="Maze Template" type="MeshInstance3D" parent="MazeGame"]
-
-[node name="Floor" type="Node3D" parent="MazeGame"]
-
-[node name="Walls" type="Node3D" parent="MazeGame"]
-
-[node name="Static" type="Node3D" parent="MazeGame/Walls"]
-
-[node name="Doors" type="Node3D" parent="MazeGame/Walls"]
-script = ExtResource("7_m0wyx")
-
-[node name="Cameras" type="Node3D" parent="MazeGame"]
-
-[node name="Camera3D" type="Camera3D" parent="MazeGame/Cameras"]
+[node name="Camera3D" type="Camera3D" parent="Cameras"]
 transform = Transform3D(-0.999031, -0.0163998, 0.0408328, 0.00360479, 0.894332, 0.447389, -0.0438552, 0.447103, -0.893407, 0, 10.5579, 0)
 fov = 37.2
 
-[node name="DeployCam" parent="MazeGame/Cameras/Camera3D" instance=ExtResource("9_laa0v")]
+[node name="DeployCam" parent="Cameras/Camera3D" instance=ExtResource("1_d48gs")]
 
-[node name="HQs" type="Node3D" parent="MazeGame"]
+[node name="HQs" type="Node3D" parent="."]
 
-[node name="Spawners" type="Node3D" parent="MazeGame"]
+[node name="Spawners" type="Node3D" parent="."]
 
-[node name="AI" type="Node3D" parent="MazeGame/Spawners"]
+[node name="AI" type="Node3D" parent="Spawners"]
 
-[node name="Loot" type="Node3D" parent="MazeGame/Spawners"]
+[node name="Loot" type="Node3D" parent="Spawners"]
 
-[node name="Vehicles" type="Node3D" parent="MazeGame/Spawners"]
+[node name="Vehicles" type="Node3D" parent="Spawners"]
 
-[node name="Emplacements" type="Node3D" parent="MazeGame/Spawners"]
+[node name="Emplacements" type="Node3D" parent="Spawners"]
 
-[node name="Native" parent="." instance=ExtResource("6_5rsrc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214.285, 0, -760.89)
+[node name="Wall_x1_" parent="." instance=ExtResource("2_p84r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589068, 1.19209e-07, -7.62509)
+script = null
 
-[node name="Door_" parent="." instance=ExtResource("8_44qyb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.838, 5.96046e-08, -771.17)
+[node name="Wall_x2_" parent="." instance=ExtResource("3_x114x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589068, 1.19209e-07, -7.62509)
+script = null
+
+[node name="Wall_x4_" parent="." instance=ExtResource("4_hfm25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589068, 1.19209e-07, -7.62509)
+script = null
+
+[node name="Wall_x6" parent="." instance=ExtResource("5_ipos8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589068, 1.19209e-07, -7.62509)
+script = null
+
+[node name="Wall_x8" parent="." instance=ExtResource("6_5lai8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589068, 1.19209e-07, -7.62509)
+script = null
+
+[node name="Wall_x10" parent="." instance=ExtResource("7_6t10g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589068, 1.19209e-07, -7.62509)
+script = null
