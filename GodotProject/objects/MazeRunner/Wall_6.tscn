@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c3au160r2c8gp" path="res://scripts/MazeRunner/Door.gd" id="1_lplq6"]
 [ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_r38he"]
 
-[node name="Wall_x6" type="Node3D"]
+[node name="Wall_x6_" type="Node3D"]
 script = ExtResource("1_lplq6")
 
 [node name="FoundationPlanter_Long_01" parent="." instance=ExtResource("2_r38he")]

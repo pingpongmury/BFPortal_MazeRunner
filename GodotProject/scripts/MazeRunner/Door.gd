@@ -11,8 +11,6 @@ func _enter_tree() -> void:
 	var scene_root := get_tree().edited_scene_root
 	if scene_root == null or self == scene_root:
 		return
-
-
 		
 	if get_meta("_children_localized", false):
 		return
@@ -24,5 +22,6 @@ func _enter_tree() -> void:
 	scene_file_path = ""
 	if self.owner != scene_root:
 		self.owner = scene_root
-
+	
+	set_display_folded(true)
 	set_meta("_children_localized", true)
