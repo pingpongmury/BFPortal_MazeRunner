@@ -45,8 +45,9 @@ func _validate_property(property: Dictionary):
 	set(value):
 		is_movable = value
 		phase = 1 if is_movable else 0
-		calc_name()
+		update_decal()
 		update_color_from_phase()
+		calc_name()
 		notify_property_list_changed()
 
 
@@ -85,6 +86,7 @@ var movement_type: int = 0:
 	set(value):
 		movement_type = value
 		calc_name()
+		call_deferred("update_decal")
 		notify_property_list_changed()
 
 
@@ -93,6 +95,7 @@ const ROTATIONAL_DIRECTIONS := ["CW", "CCW", "Up", "Down"]
 var direction: int = 0:
 	set(value):
 		direction = value
+		call_deferred("update_decal")
 		calc_name()
 		notify_property_list_changed()
 
@@ -179,8 +182,8 @@ func compute_base_obj_id() -> int:
 		1000    * direction +
 		1
 	)
-	
-	
+
+
 func calc_name() -> void:
 	var nameStr: String = ""
 	if !is_movable:
@@ -204,10 +207,11 @@ func enum_to_hint_string(arr: Array) -> String:
 			parts.append("%s:%d" % [arr[i], i])
 	return ",".join(parts)
 
+
 var is_mesh_setup: bool = false
 func setup_mesh() -> void:
 	# Find the MeshInstance3D
-	mesh = $Mesh/Mesh
+	mesh = get_node_or_null("Mesh/Mesh")
 	if mesh == null:
 		return
 	# Hide any collision mesh
@@ -235,3 +239,61 @@ func update_color_from_phase() -> void:
 	else:
 		color = Color.WEB_GRAY
 	update_material_color()
+
+
+func update_decal() -> void:
+	var arrow_front: Decal = get_node_or_null("ArrowDecal_Front")	#+Z side
+	var arrow_back: Decal = get_node_or_null("ArrowDecal_Back") 	#-Z side
+	
+	if !arrow_front or !arrow_back or !arrow_front.is_inside_tree() or !arrow_back.is_inside_tree():
+		return
+		
+	if !is_movable: #don't show the arrows if the DoorComponent isn't movable
+		arrow_front.visible = false
+		arrow_back.visible = false
+		return
+	
+	arrow_front.visible = true
+	arrow_back.visible = true
+	
+	const WORLD_UP: Vector3 = Vector3.UP  # (0, 1, 0)
+	var object_up: Vector3 = global_transform.basis.y
+	var is_upside_down = object_up.dot(WORLD_UP) < 0.0
+
+	var rotations: Array = [
+		Vector3( 90,   0,   0),   # CW / UP
+		Vector3(-90, 180,   0),   # CCW / DOWN
+		Vector3(  0,  90, -90),   # UP / LEFT
+		Vector3(  0, -90,  90)    # DOWN / RIGHT
+	]
+	
+	var front_rotation: Vector3 = rotations[direction]
+	var back_rotation: Vector3
+	
+	# back decal needs to be rotated differently to keep direction indication consistent
+	if direction == 0 or direction == 1:
+		back_rotation = Vector3(front_rotation.x, front_rotation.y + 180, front_rotation.z)
+	else:
+		back_rotation = Vector3(front_rotation.x, front_rotation.y, front_rotation.z + 180)
+	
+	# flip the decal about the x and y axes if it's placed upside-down in the world instance
+	if is_upside_down:
+		front_rotation = Vector3(front_rotation.x + 180, front_rotation.y + 180, front_rotation.z)
+		back_rotation = Vector3(back_rotation.x + 180, back_rotation.y + 180, back_rotation.z)
+		if direction == 2 or direction == 3:
+			back_rotation.z += 180
+	
+	#rotate the decals
+	arrow_front.rotation_degrees = front_rotation
+	arrow_back.rotation_degrees  = back_rotation
+	
+	#pick which decal to use (linear indicating or rotation indicating)
+	var tex_path: String = "res://objects/MazeRunner/"
+	if movement_type == 0:		#Linear
+		tex_path += "arrow.png"
+	elif movement_type == 1:	#Rotational
+		tex_path += "rot_arrow.png"
+	
+	#set tecal texture according to movement type
+	arrow_front.texture_albedo = load(tex_path)
+	arrow_back.texture_albedo = load(tex_path)

@@ -23,9 +23,6 @@ func _enter_tree() -> void:
 	tree.node_added.connect(_on_node_added)
 	tree.node_removed.connect(_on_node_removed)
 
-	# Recompute only after a scene is fully loaded
-	get_editor_interface().scene_changed.connect(_on_scene_changed)
-
 
 func _exit_tree() -> void:
 	if _inspector and _inspector.property_edited.is_connected(_on_property_edited):
@@ -38,16 +35,10 @@ func _exit_tree() -> void:
 	if tree.node_removed.is_connected(_on_node_removed):
 		tree.node_removed.disconnect(_on_node_removed)
 
-	if get_editor_interface().scene_changed.is_connected(_on_scene_changed):
-		get_editor_interface().scene_changed.disconnect(_on_scene_changed)
-
 
 # --------------------------------------------------
 # Signal handlers
 # --------------------------------------------------
-
-func _on_scene_changed(_root: Node) -> void:
-	_request_recompute()
 
 
 func _on_property_edited(property_name: String) -> void:

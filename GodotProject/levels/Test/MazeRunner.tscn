@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" path="res://static/MP_Eastwood_Assets.tscn" id="7_whd0n"]
 [ext_resource type="Script" uid="uid://c3au160r2c8gp" path="res://scripts/MazeRunner/Door.gd" id="8_o7556"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/VehicleSpawner.tscn" id="15_l5yay"]
-[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="15_spdj6"]
+[ext_resource type="PackedScene" uid="uid://dwtk73v0meric" path="res://objects/MazeRunner/FoundationPlanter_Long_01.tscn" id="15_spdj6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2077n"]
 render_priority = 0
@@ -64,31 +64,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25311, 3.12457, -21.5151)
 script = ExtResource("8_o7556")
 metadata/_children_localized = true
 
-[node name="FoundationPlanter_Long_01" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_Down_2" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
 
-[node name="Static_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_Down_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
 
-[node name="Door_B_Half_Rotational_Up_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_CW_2" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
-ObjId = 2110001
-color = Color(0, 0, 0.501961, 1)
-is_movable = true
-phase = 2
-height = 1
-movement_type = 1
-direction = 0
 
-[node name="Door_C_Half_Linear_CW_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_CW_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
-ObjId = 3100001
-color = Color(0, 0.392157, 0, 1)
-is_movable = true
-phase = 3
-height = 1
-movement_type = 0
-direction = 0
 
 [node name="Wall_x1_" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95465, 3.12457, -1.0609)
@@ -117,11 +103,25 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.918
 script = ExtResource("8_o7556")
 metadata/_children_localized = true
 
-[node name="FoundationPlanter_Long_01" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_4" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_CCW_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_4" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+ObjId = 1101001
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 0
+direction = 1
 
-[node name="FoundationPlanter_Long_02" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_4" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_CW_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x1_4" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+ObjId = 1100001
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 0
+direction = 0
 
 [node name="Wall_x4_7" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7841, 3.12457, -31.7274)
@@ -249,17 +249,45 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.918
 script = ExtResource("8_o7556")
 metadata/_children_localized = true
 
-[node name="FoundationPlanter_Long_01" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Rotational_Left_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+ObjId = 1112001
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 1
+direction = 2
 
-[node name="FoundationPlanter_Long_02" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Rotational_Right_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+ObjId = 1113001
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 1
+direction = 3
 
-[node name="FoundationPlanter_Long_03" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Rotational_Down_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+ObjId = 1111001
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 1
+direction = 1
 
-[node name="FoundationPlanter_Long_04" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Rotational_Up_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_4" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+ObjId = 1110001
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 1
+direction = 0
 
 [node name="Wall_x6_1" type="Node3D" parent="MazeGame/MazeWalls/Phase_Static"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.70011, 3.12457, -39.3869)
@@ -541,23 +569,9 @@ metadata/_children_localized = true
 
 [node name="Door_A_Full_Linear_CCW_2" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_7" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
-ObjId = 1001001
-color = Color(0.545098, 0, 0, 1)
-is_movable = true
-phase = 1
-height = 0
-movement_type = 0
-direction = 1
 
 [node name="Door_A_Full_Linear_CCW_" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_7" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
-ObjId = 1001002
-color = Color(0.545098, 0, 0, 1)
-is_movable = true
-phase = 1
-height = 0
-movement_type = 0
-direction = 1
 
 [node name="FoundationPlanter_Long_03" parent="MazeGame/MazeWalls/Phase_Static/Wall_x2_7" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
@@ -8886,17 +8900,45 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.84
 script = ExtResource("8_o7556")
 metadata/_children_localized = true
 
-[node name="FoundationPlanter_Long_01" parent="Wall_x2_" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_Down_2" parent="Wall_x2_" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+ObjId = 1103001
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 0
+direction = 3
 
-[node name="FoundationPlanter_Long_02" parent="Wall_x2_" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_Down_" parent="Wall_x2_" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+ObjId = 1103002
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 0
+direction = 3
 
-[node name="FoundationPlanter_Long_03" parent="Wall_x2_" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_Up_2" parent="Wall_x2_" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+ObjId = 1102001
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 0
+direction = 2
 
-[node name="FoundationPlanter_Long_04" parent="Wall_x2_" instance=ExtResource("15_spdj6")]
+[node name="Door_A_Half_Linear_Up_" parent="Wall_x2_" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+ObjId = 1102002
+color = Color(0.545098, 0, 0, 1)
+is_movable = true
+phase = 1
+height = 1
+movement_type = 0
+direction = 2
 
 [node name="Wall_x1_" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4085, 299.426, 148.761)
@@ -9123,4 +9165,289 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.21
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
 
 [node name="FoundationPlanter_Long_08" parent="Wall_x4_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.3186, -0.72903, -9.98974e-05)
+
+[node name="Wall_x2_2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -47.2757, 299.426, 3.2341)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x2_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x2_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x2_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x2_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="Wall_x6_" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4039, 299.426, -4.4251)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_05" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_06" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_07" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_08" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.3186, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_09" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_10" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 10.2124, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_11" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_12" parent="Wall_x6_" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1062, -0.729034, -0.000106812)
+
+[node name="Wall_x4_4" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.8509, 299.426, -6.9783)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x4_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x4_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x4_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x4_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_05" parent="Wall_x4_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_06" parent="Wall_x4_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_07" parent="Wall_x4_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_08" parent="Wall_x4_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.3186, -0.72903, -9.98974e-05)
+
+[node name="Wall_x8_2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4039, 299.426, -24.8499)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_05" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_06" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_07" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_08" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.3186, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_09" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_10" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 10.2124, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_11" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_12" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1062, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_13" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4248, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_14" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 20.4248, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_15" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_16" parent="Wall_x8_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 15.3186, -0.729034, -0.000106812)
+
+[node name="Wall_x6_2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.4261, 299.426, -37.6155)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_05" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_06" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_07" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_08" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.3186, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_09" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_10" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 10.2124, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_11" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_12" parent="Wall_x6_2" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1062, -0.729034, -0.000106812)
+
+[node name="Wall_x2_3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2333, 299.426, -55.4871)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x2_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x2_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x2_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x2_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="Wall_x6_3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9791, 299.426, -45.2747)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_05" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_06" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_07" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_08" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.3186, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_09" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_10" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 10.2124, -0.729034, -0.000106812)
+
+[node name="FoundationPlanter_Long_11" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_12" parent="Wall_x6_3" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1062, -0.729034, -0.000106812)
+
+[node name="Wall_x2_4" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.8509, 299.426, -37.6155)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x2_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x2_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x2_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x2_4" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="Wall_x4_5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1915, 299.426, -35.0623)
+script = ExtResource("8_o7556")
+metadata/_children_localized = true
+
+[node name="FoundationPlanter_Long_01" parent="Wall_x4_5" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_02" parent="Wall_x4_5" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_03" parent="Wall_x4_5" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_04" parent="Wall_x4_5" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_05" parent="Wall_x4_5" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_06" parent="Wall_x4_5" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)
+
+[node name="FoundationPlanter_Long_07" parent="Wall_x4_5" instance=ExtResource("15_spdj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3186, -3.11563, 0)
+
+[node name="FoundationPlanter_Long_08" parent="Wall_x4_5" instance=ExtResource("15_spdj6")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -15.3186, -0.72903, -9.98974e-05)
