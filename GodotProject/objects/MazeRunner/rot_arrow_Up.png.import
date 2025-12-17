@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c80vq1muv312n"
-path="res://.godot/imported/arrow.png-be8d80002727f2a97ababc3039f5afa8.ctex"
+uid="uid://btt3wgpge18r"
+path="res://.godot/imported/rot_arrow_Up.png-6fdfaa611b7171b91423e2f0c0d6fa42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/MazeRunner/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-be8d80002727f2a97ababc3039f5afa8.ctex"]
+source_file="res://objects/MazeRunner/rot_arrow_Up.png"
+dest_files=["res://.godot/imported/rot_arrow_Up.png-6fdfaa611b7171b91423e2f0c0d6fa42.ctex"]
 
 [params]
 

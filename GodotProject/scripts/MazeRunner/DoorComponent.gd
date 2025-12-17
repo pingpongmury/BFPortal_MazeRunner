@@ -3,7 +3,6 @@
 class_name DoorComponent
 extends Door
 
-
 @export var ObjId: int = -1
 @export var id = ""
 # SDK native objects use:
@@ -27,7 +26,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 func _validate_property(property: Dictionary):
 	if property.name == "id":
-		property.usage = PROPERTY_USAGE_NO_EDITOR
+		property.usage = PROPERTY_USAGE_NO_EDITOR 
 
 
 # ------------------------------------  Begin Custom Code ------------------------------------
@@ -143,30 +142,27 @@ func _get_property_list() -> Array:
 	return props
 
 
-var mesh: MeshInstance3D
-var mat: Material
-
 #------------------------------------------------------------------------
-#---------------------------- Door Overrides ----------------------------
+#---------------------------- Godot Overrides ---------------------------
 #------------------------------------------------------------------------
 func _enter_tree() -> void:
 	if not Engine.is_editor_hint():
 		return
-	
 	add_to_group(StringName("all-doors"), false)
 	return
 
 
-#------------------------------------------------------------------------
-#---------------------------- Godot Overrides ---------------------------
-#------------------------------------------------------------------------
 func _exit_tree() -> void:
 	remove_from_group(StringName("all-doors"))
+
 
 func _ready() -> void:
 	setup_mesh()
 	update_color_from_phase()
 	update_material_color()
+	setup_decal()
+	update_decal()
+	calc_name()
 
 
 #------------------------------------------------------------------------
@@ -208,6 +204,8 @@ func enum_to_hint_string(arr: Array) -> String:
 	return ",".join(parts)
 
 
+var mesh: MeshInstance3D
+var mat: Material
 var is_mesh_setup: bool = false
 func setup_mesh() -> void:
 	# Find the MeshInstance3D
@@ -241,10 +239,16 @@ func update_color_from_phase() -> void:
 	update_material_color()
 
 
+var arrow_front: Decal
+var arrow_back: Decal
+func setup_decal() -> void:
+	arrow_front = get_node_or_null("ArrowDecal_Front")	#+Z side
+	arrow_back = get_node_or_null("ArrowDecal_Back") 	#-Z side
+	return
+
+
+
 func update_decal() -> void:
-	var arrow_front: Decal = get_node_or_null("ArrowDecal_Front")	#+Z side
-	var arrow_back: Decal = get_node_or_null("ArrowDecal_Back") 	#-Z side
-	
 	if !arrow_front or !arrow_back or !arrow_front.is_inside_tree() or !arrow_back.is_inside_tree():
 		return
 		
@@ -252,48 +256,60 @@ func update_decal() -> void:
 		arrow_front.visible = false
 		arrow_back.visible = false
 		return
-	
-	arrow_front.visible = true
-	arrow_back.visible = true
-	
-	const WORLD_UP: Vector3 = Vector3.UP  # (0, 1, 0)
-	var object_up: Vector3 = global_transform.basis.y
-	var is_upside_down = object_up.dot(WORLD_UP) < 0.0
-
-	var rotations: Array = [
-		Vector3( 90,   0,   0),   # CW / UP
-		Vector3(-90, 180,   0),   # CCW / DOWN
-		Vector3(  0,  90, -90),   # UP / LEFT
-		Vector3(  0, -90,  90)    # DOWN / RIGHT
-	]
-	
-	var front_rotation: Vector3 = rotations[direction]
-	var back_rotation: Vector3
-	
-	# back decal needs to be rotated differently to keep direction indication consistent
-	if direction == 0 or direction == 1:
-		back_rotation = Vector3(front_rotation.x, front_rotation.y + 180, front_rotation.z)
 	else:
-		back_rotation = Vector3(front_rotation.x, front_rotation.y, front_rotation.z + 180)
-	
-	# flip the decal about the x and y axes if it's placed upside-down in the world instance
-	if is_upside_down:
-		front_rotation = Vector3(front_rotation.x + 180, front_rotation.y + 180, front_rotation.z)
-		back_rotation = Vector3(back_rotation.x + 180, back_rotation.y + 180, back_rotation.z)
-		if direction == 2 or direction == 3:
-			back_rotation.z += 180
-	
-	#rotate the decals
-	arrow_front.rotation_degrees = front_rotation
-	arrow_back.rotation_degrees  = back_rotation
-	
-	#pick which decal to use (linear indicating or rotation indicating)
+		arrow_front.visible = true
+		arrow_back.visible = true
+	var curr_front_rot = arrow_front.global_rotation_degrees
+	var curr_back_rot = arrow_back.global_rotation_degrees
+
+	#pick which decal to use (linear indicating or rotation indicating, direction)
 	var tex_path: String = "res://objects/MazeRunner/"
+	var front_path: String
+	var back_path: String
 	if movement_type == 0:		#Linear
-		tex_path += "arrow.png"
-	elif movement_type == 1:	#Rotational
-		tex_path += "rot_arrow.png"
+		tex_path += "arrow_"
+		if is_up_aligned():
+			front_path = tex_path + LINEAR_DIRECTIONS[direction]
+			back_path = tex_path + LINEAR_DIRECTIONS[direction]
+		else:
+			front_path = tex_path + get_flipped_dir()
+			back_path = tex_path + get_flipped_dir()
+	else:
+		tex_path += "rot_arrow_"
+		if is_up_aligned():
+			front_path = tex_path + ROTATIONAL_DIRECTIONS[direction]
+			back_path = tex_path + get_flipped_dir()
+		else:
+			front_path = tex_path + get_flipped_dir()	
+			back_path = tex_path + ROTATIONAL_DIRECTIONS[direction]
 	
 	#set tecal texture according to movement type
-	arrow_front.texture_albedo = load(tex_path)
-	arrow_back.texture_albedo = load(tex_path)
+	arrow_front.texture_albedo = load(front_path + ".png")
+	arrow_back.texture_albedo = load(back_path + ".png")
+
+
+func is_up_aligned() -> bool:
+	var local_up = self.transform.basis.y.normalized()
+	var world_up = Vector3.UP
+	var dot = local_up.dot(world_up)
+	
+	# Convert tolerance to cosine value for dot product comparison
+	var tolerance_radians = deg_to_rad(5)
+	return dot >= cos(tolerance_radians)
+
+
+func get_flipped_dir() -> String:
+	if movement_type == 0:#linear
+		match direction:
+				0: return LINEAR_DIRECTIONS[direction + 1] #CW   ->   CCW
+				1: return LINEAR_DIRECTIONS[direction - 1] #CCW  ->   CWs
+				2: return LINEAR_DIRECTIONS[direction + 1] #Up   ->   Down
+				3: return LINEAR_DIRECTIONS[direction - 1] #Down ->   Up
+	else:#rotational
+		match direction:
+				0: return ROTATIONAL_DIRECTIONS[direction + 1] #CW   ->   CCW
+				1: return ROTATIONAL_DIRECTIONS[direction - 1] #CCW  ->   CW
+				2: return ROTATIONAL_DIRECTIONS[direction + 1] #Up   ->   Down
+				3: return ROTATIONAL_DIRECTIONS[direction - 1] #Down ->   Up
+	print("shit done broke")
+	return "" #something's broken
