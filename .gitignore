@@ -32,6 +32,10 @@
 !GodotProject/addons/floorgen/**
 !GodotProject/addons/snappy/
 !GodotProject/addons/snappy/**
+!GodotProject/addons/bf6_bake/
+!GodotProject/addons/bf6_bake/**
+!GodotProject/addons/doorcomp_objid_manager/
+!GodotProject/addons/doorcomp_objid_manager/**
 
 # Project Scene Library
 !GodotProject/addons/

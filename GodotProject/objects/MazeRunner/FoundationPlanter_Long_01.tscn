@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwtk73v0meric"]
+
+[ext_resource type="PackedScene" uid="uid://60gi8mbh03ah" path="res://raw/models/FoundationPlanter_Long_01.glb" id="1"]
+[ext_resource type="Script" uid="uid://ctqcbilrjtp7h" path="res://scripts/MazeRunner/DoorComponent.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://d2numbkvodtfe" path="res://objects/MazeRunner/arrow_Up.png" id="3_g1iit"]
+
+[node name="Static_" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]
+
+[node name="ArrowDecal_Front" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.667)
+visible = false
+size = Vector3(1.89307, 1.0346, 2.04634)
+texture_albedo = ExtResource("3_g1iit")
+upper_fade = 1e-05
+lower_fade = 1e-05
+
+[node name="ArrowDecal_Back" type="Decal" parent="."]
+transform = Transform3D(1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 0, 0, -0.667)
+visible = false
+size = Vector3(1.89307, 1.0346, 2.04634)
+texture_albedo = ExtResource("3_g1iit")
+upper_fade = 1e-05
+lower_fade = 1e-05

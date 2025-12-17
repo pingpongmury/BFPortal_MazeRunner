@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgm2uwvltkqe2"]
 
-[ext_resource type="Script" uid="uid://d3v6jwiiqqv1w" path="res://scripts/MazeRunner/static_makeLocal.gd" id="1_h2q4e"]
-[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/FoundationPlanter_Long_01.tscn" id="2_ktwym"]
+[ext_resource type="Script" uid="uid://c3au160r2c8gp" path="res://scripts/MazeRunner/Door.gd" id="1_h2q4e"]
+[ext_resource type="PackedScene" uid="uid://dwtk73v0meric" path="res://objects/MazeRunner/FoundationPlanter_Long_01.tscn" id="2_ktwym"]
 
 [node name="Wall_x3_" type="Node3D"]
 script = ExtResource("1_h2q4e")
@@ -10,16 +10,16 @@ script = ExtResource("1_h2q4e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
 
 [node name="FoundationPlanter_Long_02" parent="." instance=ExtResource("2_ktwym")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.72903, -9.98974e-05)
+transform = Transform3D(-1, 7.64274e-15, 8.74228e-08, 0, -1, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, 0, -0.72903, -9.98974e-05)
 
 [node name="FoundationPlanter_Long_03" parent="." instance=ExtResource("2_ktwym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1062, -3.11563, 0)
 
 [node name="FoundationPlanter_Long_04" parent="." instance=ExtResource("2_ktwym")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -5.1062, -0.72903, -9.98974e-05)
+transform = Transform3D(-1, 7.64274e-15, 8.74228e-08, 0, -1, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -5.1062, -0.72903, -9.98974e-05)
 
 [node name="FoundationPlanter_Long_05" parent="." instance=ExtResource("2_ktwym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2124, -3.11563, 0)
 
 [node name="FoundationPlanter_Long_06" parent="." instance=ExtResource("2_ktwym")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10.2124, -0.72903, -9.98974e-05)
+transform = Transform3D(-1, 7.64274e-15, 8.74228e-08, 0, -1, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -10.2124, -0.72903, -9.98974e-05)

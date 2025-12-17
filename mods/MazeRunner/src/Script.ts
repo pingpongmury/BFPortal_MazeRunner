@@ -13,10 +13,10 @@ const MAZE_WALL_PHASE_MOVE_SPEEDS : number[] = [0.5,1,5,10]; //Phase A, B, C, D
 const MAZE_WALL_PHASE_PERIOD : number[] = [5,3,10,30]; //Phase A, B, C, D
 
 //Phase Walls ObjIds
-const MAZE_PHASE_A_WALL_IDS : number[] = [1002011,1002012,1003011,1003012];
-const MAZE_PHASE_B_WALL_IDS : number[] = [2010011,2010012,2010021,2010022];
-const MAZE_PHASE_C_WALL_IDS : number[] = [3100011,3101011];
-const MAZE_PHASE_D_WALL_IDS : number[] = [4112011,4112021];
+const MAZE_PHASE_A_WALL_IDS : number[] = [1100001,1101001,1102001,1102002,1103001,1103002,1110001,1111001,1112001,1113001];
+const MAZE_PHASE_B_WALL_IDS : number[] = [];
+const MAZE_PHASE_C_WALL_IDS : number[] = [];
+const MAZE_PHASE_D_WALL_IDS : number[] = [];
 
 //Phase Array
 const MAZE_PHASE_IDS: number[][] = [MAZE_PHASE_A_WALL_IDS, MAZE_PHASE_B_WALL_IDS, MAZE_PHASE_C_WALL_IDS, MAZE_PHASE_D_WALL_IDS];
@@ -171,19 +171,19 @@ class MazeWall{
             switch(this.direction){
                 case "CW":
                     //rotate Clockwise about vertical axis
-                    this.openTransform = mod.CreateTransform(initPos, mod.CreateVector(mod.XComponentOf(initRot), mod.YComponentOf(initRot) + mod.DegreesToRadians(90), mod.ZComponentOf(initRot)));
+                    this.openTransform = mod.CreateTransform(initPos, mod.CreateVector(mod.XComponentOf(initRot), mod.YComponentOf(initRot) - mod.DegreesToRadians(90), mod.ZComponentOf(initRot)));
                     break; 
                 case "CCW":
                     //rotate Counter-Clockwise about vertical axis
-                    this.openTransform = mod.CreateTransform(initPos, mod.CreateVector(mod.XComponentOf(initRot), mod.YComponentOf(initRot) - mod.DegreesToRadians(90), mod.ZComponentOf(initRot)));
+                    this.openTransform = mod.CreateTransform(initPos, mod.CreateVector(mod.XComponentOf(initRot), mod.YComponentOf(initRot) + mod.DegreesToRadians(90), mod.ZComponentOf(initRot)));
                     break;
                 case "Up":
                     //rotate Clockwise about horizontal axis
-                    this.openTransform = mod.CreateTransform(initPos, mod.CreateVector(mod.XComponentOf(initRot) + mod.DegreesToRadians(90), mod.YComponentOf(initRot), mod.ZComponentOf(initRot)));
+                    this.openTransform = mod.CreateTransform(initPos, mod.CreateVector(mod.XComponentOf(initRot) - mod.DegreesToRadians(90), mod.YComponentOf(initRot), mod.ZComponentOf(initRot)));
                     break;
                 case "Down":
                     //rotate Counter-Clockwise about horizontal axis
-                    this.openTransform = mod.CreateTransform(initPos, mod.CreateVector(mod.XComponentOf(initRot) - mod.DegreesToRadians(90), mod.YComponentOf(initRot), mod.ZComponentOf(initRot)));
+                    this.openTransform = mod.CreateTransform(initPos, mod.CreateVector(mod.XComponentOf(initRot) + mod.DegreesToRadians(90), mod.YComponentOf(initRot), mod.ZComponentOf(initRot)));
                     break;
                 default:
                     break;

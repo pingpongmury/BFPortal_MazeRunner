@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1v1jbfaljval"]
+
+[ext_resource type="Script" uid="uid://c3au160r2c8gp" path="res://scripts/MazeRunner/Door.gd" id="1_hm46c"]
+[ext_resource type="PackedScene" uid="uid://dwtk73v0meric" path="res://objects/MazeRunner/FoundationPlanter_Long_01.tscn" id="2_vnddl"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Wall_x1_" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10621, 5.10621, 0)
+script = ExtResource("1_hm46c")
+metadata/_children_localized = true
+
+[node name="Door_A_Half_Linear_Up_" parent="Wall_x1_" instance=ExtResource("2_vnddl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.11563, 0)
+ObjId = 1102001
+movement_type = 0
+
+[node name="Door_A_Half_Linear_Up_2" parent="Wall_x1_" instance=ExtResource("2_vnddl")]
+transform = Transform3D(-1, 7.64274e-15, 8.74228e-08, 0, -1, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, 0, -0.72903, -9.98974e-05)
+ObjId = 1102002
+movement_type = 0
